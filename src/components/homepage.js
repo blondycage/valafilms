@@ -11,8 +11,8 @@ export default function homepage({vid}) {
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">AWARDS,MOONS,STARS,<br/>
-  VIDEOGRAPHY,<br/>  JARGONS </h1>
+  <h1 className="slideup">SHORTS,ADS,<br/>
+  CREATIVE VIDEOGRAPHY<br/>   </h1>
 </div>
 </div>
         </div>

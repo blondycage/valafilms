@@ -9,8 +9,8 @@ export default function projects({vid}) {
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">MAKANAKI CONNECT <br/>
-   BABALAWO, ME SEF DE 
+  <h1 className="slideup">DARK CIRCLE <br/>
+  a SHORT FILM BY CHAVALA YADUMA
 </h1>
 </div>
 
