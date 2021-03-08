@@ -4,10 +4,12 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import Vid from '../src/files/video.mp4'
 import Vid2 from '../src/files/vid.mp4'
-
+import Vid3 from '../src/files/ad2.mp4'
 import {useState,useEffect  } from "react";
 import Home from "../src/components/homepage";
 import Projects from "../src/components/projects"
+import Collabs from "../src/components/collab"
+import Ad from "../src/components/Ad"
 
 function App() {
 
@@ -22,8 +24,10 @@ const[view,setview]=useState('home');
       return <Home vid={Vid}/>
     case 'projects':
     return <Projects vid={Vid2} />
-    case 'moderator':
-      return <p>Your ongoing events</p>
+    case 'collab':
+      return <Collabs vid ={Vid}/>
+      case 'adverts':
+        return <Ad vid ={Vid3}/>
     default:
       return <p>Your current feed</p>
   }
@@ -60,10 +64,10 @@ const[view,setview]=useState('home');
 <div className="nav-content-container">
 
 <h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('home');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}} >home </h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>project</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"}>something</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"}>something</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"}>something</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>shorts</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('collab');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>collabs</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('adverts');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>Adverts</h1>
+
 
 </div>
 
