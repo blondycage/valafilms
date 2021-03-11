@@ -37,7 +37,7 @@ export default function projects({vid}) {
 <h2>LOUD SILENCE</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?</p>
 
-<Button className={"trailer"} >Watch Trailer</Button>
+<Button className={"trailer"} variant="contained" color="secondary" >Watch Trailer</Button>
 </div>
 <div className="projects">
 <div className="linearcont">
@@ -85,7 +85,7 @@ export default function projects({vid}) {
 <h2>STILL FALLING</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?</p>
 
-<Button className={"trailer"} >Watch Trailer</Button>
+<Button className={"trailer"} variant="contained" color="secondary"  >Watch Trailer</Button>
 </div>
 <div className="projects">
 <div className="linearcont">

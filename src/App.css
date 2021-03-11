@@ -98,11 +98,35 @@ opacity: 0;
 border: 1px solid rgb(0, 0, 0);
 
 }
+
+.pcontent{
+  color: white;
+
+}
+.pcontent p,.pcontent h1,.pcontent h2 {
+  max-width: 450px;
+  margin-bottom: 20px;
+}
+.pcontent h2{
+  text-transform: capitalize;
+}
+.aboutus{
+  margin-top: 100px;
+  margin-left: 100px;
+background-color: black;
+width: 100vw;
+min-height: 100vh;
+color: white;
+z-index: 600;
+
+
+}
 .navcontent{
   display: flex;
   justify-content: flex-end;
   margin-right: 40px;
   margin-top: 100px;
+  color: white;
 }
 .cp-text{
 

@@ -10,6 +10,7 @@ import Home from "../src/components/homepage";
 import Projects from "../src/components/projects"
 import Collabs from "../src/components/collab"
 import Ad from "../src/components/Ad"
+import Ab from "../src/components/about"
 
 function App() {
 
@@ -28,6 +29,8 @@ const[view,setview]=useState('home');
       return <Collabs vid ={Vid}/>
       case 'adverts':
         return <Ad vid ={Vid3}/>
+        case 'about':
+          return <Ab vid />
     default:
       return <p>Your current feed</p>
   }
@@ -67,6 +70,8 @@ const[view,setview]=useState('home');
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>shorts</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('collab');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>collabs</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('adverts');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>Adverts</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('about');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>About Us</h1>
+
 
 
 </div>

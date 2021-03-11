@@ -14,16 +14,16 @@ export default function collab({vid}) {
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">GUZAPE <br/>
- OF EARTH AND DUST
-</h1>
+  <h1 className="slideup">GUZAPE </h1>
+ <h4>OF EARTH AND DUST</h4>
+
 </div>
 
 </div>
 <div className="content"> 
 <h2>GUZAPE</h2>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?</p>
-
+<Button className="trailer" variant="containned" color="primary">Watch Trailer</Button>
 </div>
 <div className="projects">
 <div className="linearcont">
