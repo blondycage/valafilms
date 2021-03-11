@@ -13,6 +13,11 @@ body{
   
   
 }
+.trailer{
+  background-color: teal;
+  width: 200px;
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -102,7 +107,7 @@ border: 1px solid rgb(0, 0, 0);
 .cp-text{
 
   position: absolute;
-  bottom:100px;
+  bottom:50px;
   left:40px;
    color: rgba(255, 255, 255, 0.7); text-shadow: 0 1px rgba(255, 255, 255, 0.1);
    z-index:400;
@@ -195,6 +200,7 @@ opacity: 1;
 }
 .content p{
   opacity: 0.5;
+  text-align: left;
 }
 .projects{
 position: relative;
@@ -347,7 +353,7 @@ text-align: justify;
 }
 .slideup{
   display: block;
-  z-index: 2999;
+  z-index: 1;
 }
 
 .body {
