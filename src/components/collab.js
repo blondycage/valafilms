@@ -9,6 +9,14 @@ export default function collab({vid}) {
     return (
         <div>
                  <div className="vidcon">
+                 <div className="ic">
+                 <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a>
+<a href="#" className="fa fa-linkedin"></a>
+<a href="#" className="fa fa-youtube"></a>
+<a href="#" className="fa fa-instagram"></a>
+</div>
       <video autoPlay muted loop id="myVideo">
   <source src={vid} type="video/mp4"/>
 </video>

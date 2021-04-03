@@ -11,13 +11,18 @@ import Projects from "../src/components/projects"
 import Collabs from "../src/components/collab"
 import Ad from "../src/components/Ad"
 import Ab from "../src/components/about"
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import rad from "../src/files/radar.png";
+import { useWindowScroll } from "react-use";
 function App() {
-
+  const { y: pageYOffset } = useWindowScroll();
  const [styleCondition,setstyle]=useState(true);
  const [styleCondition2,setstyle2]=useState(true);
  const [styleCondition3,setstyle3]=useState(true);
+ const [visible, setVisiblity] = useState("");
 const[view,setview]=useState('home');
+
  function setviews(role) {
   
   switch(role) {
@@ -36,10 +41,16 @@ const[view,setview]=useState('home');
   }
 
 }
-
+useEffect(() => {
+  if (pageYOffset > 200) {
+      setVisiblity("black");
+  } else {
+      setVisiblity("");
+  }
+}, [pageYOffset]);
   return (
     <div className="App">
-    
+    <div className={`navcontainer ${visible}`}></div>
       <div className="homecon">
         <img src={logo} alt=""/>
         <h1>V A L A F I L M S</h1>
@@ -62,6 +73,9 @@ const[view,setview]=useState('home');
   <p className="cp-text">
     © Copyright 2021 Valafilms. All rights reserved.
 </p>
+<div className="radar">
+  <img src={rad} alt=""/>
+</div>
     <div className="navcontent">
 
 <div className="nav-content-container">
@@ -70,7 +84,7 @@ const[view,setview]=useState('home');
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>shorts</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('collab');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>collabs</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('adverts');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>Adverts</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('about');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>About Us</h1>
+
 
 
 

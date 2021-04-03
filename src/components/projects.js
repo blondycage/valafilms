@@ -16,12 +16,51 @@ import sf5 from "../files/sf5.jpeg"
 import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
 import sf8 from "../files/sf8.jpeg"
-
+import Slider from "react-slick";
+import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-export default function projects({vid}) {
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import {useState} from "react"
+import { teal, purple } from '@material-ui/core/colors';
+export default function Projects({vid}) {
+  const [ind,setIndex]=useState(0)
+   const settings = {
+  
+    className: "slider variable-width center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    slidesToScroll:6,
+    variableWidth: true,
+    autoplay:true,
+    speed: 500,
+  
+  };
+  const ColorButton = withStyles((theme) => ({
+    root: {
+      color: theme.palette.getContrastText(teal[500]),
+      backgroundColor: teal[500],
+      '&:hover': {
+        backgroundColor: teal[700],
+      },
+    },
+  }))(Button);
+  let movies=[{"header":"LOUD SILENCE",
+"desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"},{"header":"STILL FALLING",
+"desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"}]
     return (
         <div>
                  <div className="vidcon">
+                   <div className="ic">
+                 <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a>
+<a href="#" className="fa fa-linkedin"></a>
+<a href="#" className="fa fa-youtube"></a>
+<a href="#" className="fa fa-instagram"></a>
+</div>
       <video autoPlay muted loop id="myVideo">
   <source src={vid} type="video/mp4"/>
 </video>
@@ -33,102 +72,61 @@ export default function projects({vid}) {
 </div>
 
 </div>
+<Slider {...settings}>
+          <div >
+           <img src={sf1} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf2} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf3} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf4} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf5} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf6} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf7} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
+          </div>
+          <div>
+          <img src={sf8} onClick={()=>{setIndex(1)} }className="imgs" alt="img"/>
+          </div>
+          <div>
+          <img src={lsp1} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div>
+          <div>
+          <img src={lsp2} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div>
+          <div>
+          <img src={lsp3} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div>
+          <div>
+          <img src={lsp4} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div>
+          <div>
+          <img src={lsp5} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div><div>
+          <img src={lsp6} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div>
+          <div>
+          <img src={lsp7} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
+          </div>
+        </Slider>
+      
 <div className="content"> 
-<h2>LOUD SILENCE</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?</p>
+<h2>{movies[ind].header}</h2>
+<p>{movies[ind].desc}</p>
+<ColorButton className={"trailer"} variant="contained" color="secondary" >Watch Trailer</ColorButton>
+</div>
+<br/>
+<br/>
 
-<Button className={"trailer"} variant="contained" color="secondary" >Watch Trailer</Button>
-</div>
-<div className="projects">
-<div className="linearcont">
-  <div className="pcard">
-  <img src={lsp}alt="img"/>
- 
-</div>
-<div className="pcard">
-  <img src={lsp1} alt="img"/>
- 
-</div>
-</div>
-
-<div className="linearcont"><div className="pcard">
-  <img src={lsp2} alt="img"/>
- 
-</div>
-<div className="pcard">
-  <img src={lsp3} alt="img"/>
- 
-</div>
-</div>
-<div className="linearcont"><div className="pcard">
-  <img src={lsp4} alt="img"/>
-  
-</div>
-<div className="pcard">
-  <img src={lsp5} alt="img"/>
- 
-</div>
-</div>
-<div className="linearcont"><div className="pcard">
-  <img src={lsp6} alt="img"/>
- 
-</div>
-<div className="pcard">
-  <img src={lsp7} alt="img"/>
-
-</div>
-</div>
-
-</div>
-<div className="project">
-<div className="content"> 
-<h2>STILL FALLING</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?</p>
-
-<Button className={"trailer"} variant="contained" color="secondary"  >Watch Trailer</Button>
-</div>
-<div className="projects">
-<div className="linearcont">
-  <div className="pcard">
-  <img src={sf}alt="img"/>
- 
-</div>
-<div className="pcard">
-  <img src={sf1} alt="img"/>
- 
-</div>
-</div>
-
-<div className="linearcont"><div className="pcard">
-  <img src={sf2} alt="img"/>
- 
-</div>
-<div className="pcard">
-  <img src={sf3} alt="img"/>
- 
-</div>
-</div>
-<div className="linearcont"><div className="pcard">
-  <img src={sf4} alt="img"/>
-  
-</div>
-<div className="pcard">
-  <img src={sf5} alt="img"/>
- 
-</div>
-</div>
-<div className="linearcont"><div className="pcard">
-  <img src={sf6} alt="img"/>
- 
-</div>
-<div className="pcard">
-  <img src={sf7} alt="img"/>
-
-</div>
-
-</div>
-</div>
-</div>
 </div>
        
     )
