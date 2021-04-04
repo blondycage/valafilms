@@ -25,18 +25,15 @@ import {useState} from "react"
 import { teal, purple } from '@material-ui/core/colors';
 export default function Projects({vid}) {
   const [ind,setIndex]=useState(0)
-   const settings = {
-  
-    className: "slider variable-width center",
-    centerMode: true,
+  const settings = {
+    dots: true,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    slidesToScroll:6,
-    variableWidth: true,
-    autoplay:true,
     speed: 500,
-  
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
   };
   const ColorButton = withStyles((theme) => ({
     root: {
@@ -72,58 +69,55 @@ export default function Projects({vid}) {
 </div>
 
 </div>
+<br/>
+<h1 style={{color:"teal",textAlign:"center",fontSize:"35px"}}>SHORTS</h1>
+<br/>
 <Slider {...settings}>
-          <div >
-           <img src={sf1} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf2} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf3} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf4} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf5} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf6} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf7} className="imgs" onClick={()=>{setIndex(1)} } alt="img"/>
-          </div>
-          <div>
-          <img src={sf8} onClick={()=>{setIndex(1)} }className="imgs" alt="img"/>
-          </div>
-          <div>
-          <img src={lsp1} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div>
-          <div>
-          <img src={lsp2} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div>
-          <div>
-          <img src={lsp3} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div>
-          <div>
-          <img src={lsp4} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div>
-          <div>
-          <img src={lsp5} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div><div>
-          <img src={lsp6} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div>
-          <div>
-          <img src={lsp7} onClick={()=>{setIndex(0)}} className="imgs" alt="img"/>
-          </div>
-        </Slider>
-      
+<div className="flexcol">
+          <div className="flexunder">
 <div className="content"> 
-<h2>{movies[ind].header}</h2>
-<p>{movies[ind].desc}</p>
+<h2>{movies[1].header}</h2>
+<p>{movies[1].desc}</p>
 <ColorButton className={"trailer"} variant="contained" color="secondary" >Watch Trailer</ColorButton>
 </div>
+<div className="poster"><img src={lsp} alt=""/></div>
+</div>
+<div className="flexrow">
+
+  <div className="fleximg">
+    <img src={lsp1} alt=""/>
+    <img src={lsp2} alt=""/>
+    <img src={lsp3} alt=""/>
+    <img src={lsp4} alt=""/>
+  </div>
+</div>
+
+          </div>
+          <div className="flexcol">
+          <div className="flexunder">
+<div className="content"> 
+<h2>{movies[0].header}</h2>
+<p>{movies[0].desc}</p>
+<ColorButton className={"trailer"} variant="contained" color="secondary" >Watch Trailer</ColorButton>
+</div>
+<div className="poster"><img src={sf} alt=""/></div>
+</div>
+<div className="flexrow">
+
+  <div className="fleximg">
+    <img src={sf1} alt=""/>
+    <img src={sf2} alt=""/>
+    <img src={sf3} alt=""/>
+    <img src={sf4} alt=""/>
+  </div>
+</div>
+
+          </div>
+        
+          
+        </Slider>
+      
+
 <br/>
 <br/>
 

@@ -13,6 +13,32 @@ body{
   
   
 }
+.flexrow{
+  display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+.poster img{
+  max-width: 450px;
+  padding: 10px;
+}
+.flexunder{
+  display: flex;
+  justify-content: space-evenly;
+}
+.fleximg{
+  display: flex;
+ 
+  flex-wrap: wrap ;
+}
+.fleximg img{
+  max-width: 200px;
+  padding: 10px;
+}
+.flexcol{
+  display: flex;
+  flex-direction: column;
+}
 .pcontent{
   margin: auto;
   display: flex;
@@ -23,9 +49,9 @@ body{
  
 }
 .pcontent div{
-  border:1px solid white;
+  
   padding: 15px;
-  border-radius:10px;
+  
 }
 .pcontent h1,.pcontent h2{
   color: teal;
@@ -227,8 +253,7 @@ z-index: 600;
       text-align: center;
       text-decoration: none;
       margin: 15px 2px;
-      border: 1px solid goldenrod;
-    
+     
       background: #35363800;
       color: white;
     }
