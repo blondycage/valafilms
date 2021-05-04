@@ -1,8 +1,12 @@
-import React from 'react'
+import {React ,useState,useEffect}from 'react'
 import Slider from "react-slick";
 import img from "../files/Guzape1.jpeg"
-
-export default function homepage({vid}) {
+import firebase from "./firebase"
+import img14 from "./1.jpg"
+import img15 from "./2.jpg"
+import img16 from "./3.jpg"
+import img17 from "./4.jpg"
+export default function Homepage({vid}) {
   const settings = {
    
     infinite: true,
@@ -15,6 +19,24 @@ export default function homepage({vid}) {
    
     
   };
+  const [link,setlink] = useState("")
+ 
+  const loadContent= ()=>{
+    const todoRef = firebase.database().ref('vala/settings/homepage/landingvideo');
+    todoRef.on('value', (snapshot) => {
+     setlink(snapshot.val())
+     console.log(link)
+
+    }); }
+
+  useEffect(() => {
+    // Create an scoped async function in the hook
+    async function anyNameFunction() {
+      await loadContent();
+    }
+    // Execute the created function directly
+    anyNameFunction();
+  }, []);
     return (
         <div>
               <div className="vidcon">
@@ -27,7 +49,7 @@ export default function homepage({vid}) {
 <a href="#" className="fa fa-instagram"></a>
 </div>
       <video autoPlay muted loop id="myVideo">
-  <source src={vid} type="video/mp4"/>
+  <source src={`${link}`} type="video/mp4"/>
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
@@ -77,7 +99,26 @@ export default function homepage({vid}) {
           </div> </div>
          
         </Slider>
-
+        <h2 style={{textAlign:"center",color:'teal'}}>MEET THE TEAM</h2>
+        <br/>
+        <div className="workers">
+   <div> <img src={img14} alt=""/>
+   <h4 style={{textAlign:"center",color:'white'}}>Mike Surloff</h4>
+     <small style={{textAlign:"center",color:'white'}}>CSO & Head of Markets</small></div>
+     <div style={{textAlign:"center",color:'white'}}>  <img src={img15} alt=""/>
+     <h4 style={{textAlign:"center",color:'white'}}>Jonathan Turner</h4>
+     <small style={{textAlign:"center",color:'white'}}>CFO </small>
+     
+     </div>
+   
+    <div>  <img src={img16} alt=""/>
+    <h4 style={{textAlign:"center",color:'white'}}> Amanda Benedict</h4>
+     <small style={{textAlign:"center",color:'white'}}>I.T lead & Social media Manager</small></div>
+   <div>  <img src={img17} alt=""/> <h4 >Paul Rife</h4>
+     <small style={{textAlign:"center",color:'white'}}>Financial Manager</small>
+     </div>
+   
+   </div>
         </div>
     )
 }

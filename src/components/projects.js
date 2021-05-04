@@ -21,20 +21,37 @@ import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material
 import Button from '@material-ui/core/Button';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import {useState} from "react"
+import Rodal from 'rodal';
+import {useState,useEffect  } from "react";
 import { teal, purple } from '@material-ui/core/colors';
+import firebase from "./firebase"
+import YoutubeEmbed from "./embed";
 export default function Projects({vid}) {
   const [ind,setIndex]=useState(0)
+  const [showModal,setmodal]= useState(false)
+  const [showModal2,setmodal2]= useState(false)
+  const [current,setcurrent]= useState("")
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+ 
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 5000,
   };
+  const loadContent= ()=>{
+    const todoRef = firebase.database().ref('filmpages/slides');
+    todoRef.on('value', (snapshot) => {
+     setobj(snapshot.val())
+     
+      
+
+    }); }
+    const [obj,setobj]= useState({})
+   
+ 
   const ColorButton = withStyles((theme) => ({
     root: {
       color: theme.palette.getContrastText(teal[500]),
@@ -44,11 +61,34 @@ export default function Projects({vid}) {
       },
     },
   }))(Button);
+
+ 
+useEffect(() => {
+  // Create an scoped async function in the hook
+  async function anyNameFunction() {
+    await loadContent();
+  }
+  // Execute the created function directly
+  anyNameFunction();
+  
+ 
+}, []);
   let movies=[{"header":"LOUD SILENCE",
 "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"},{"header":"STILL FALLING",
 "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"}]
     return (
         <div>
+ <div style={{zIndex:"6000",color:"white"}}>
+       <Rodal  customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
+       <YoutubeEmbed embedId="rokGy0huYEA" />      
+                </Rodal>
+                <Rodal  customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal2} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
+       <img style={{width:"100%"}}  src={`${current}`} alt=""/>      
+                </Rodal>
+                </div>
+
+
+
                  <div className="vidcon">
                    <div className="ic">
                  <a href="#" className="fa fa-facebook"></a>
@@ -73,46 +113,38 @@ export default function Projects({vid}) {
 <h1 style={{color:"teal",textAlign:"center",fontSize:"35px"}}>SHORTS</h1>
 <br/>
 <Slider {...settings}>
-<div className="flexcol">
-          <div className="flexunder">
+{ 
+   !!obj && Object.keys(obj).map((item, i) => (
+      <div className="flexcol">
+      <div className="flexunder">
 <div className="content"> 
-<h2>{movies[1].header}</h2>
-<p>{movies[1].desc}</p>
-<ColorButton className={"trailer"} variant="contained" color="secondary" >Watch Trailer</ColorButton>
+<h2>{obj[item].TITLE}</h2>
+<p>{obj[item].CAPTION}</p>
+<ColorButton className={"trailer"} variant="contained" color="secondary" onClick={()=>{setmodal(true)}}>Watch Trailer</ColorButton>
 </div>
-<div className="poster"><img src={lsp} alt=""/></div>
+<div className="poster">
+  <img src={obj[item].poster} alt=""/>
+</div>
 </div>
 <div className="flexrow">
 
-  <div className="fleximg">
-    <img src={lsp1} alt=""/>
-    <img src={lsp2} alt=""/>
-    <img src={lsp3} alt=""/>
-    <img src={lsp4} alt=""/>
-  </div>
+<div className="fleximg">
+{obj[item].supprtingimages.map((imgurl, index) => (
+      < img src={`${imgurl.url}`} alt="hey" onClick={()=>{
+        setmodal2(true);
+        setcurrent(imgurl.url)
+      }}/>
+     
+    ))}
+
+</div>
 </div>
 
-          </div>
-          <div className="flexcol">
-          <div className="flexunder">
-<div className="content"> 
-<h2>{movies[0].header}</h2>
-<p>{movies[0].desc}</p>
-<ColorButton className={"trailer"} variant="contained" color="secondary" >Watch Trailer</ColorButton>
-</div>
-<div className="poster"><img src={sf} alt=""/></div>
-</div>
-<div className="flexrow">
+      </div>
+    ))
+}  
 
-  <div className="fleximg">
-    <img src={sf1} alt=""/>
-    <img src={sf2} alt=""/>
-    <img src={sf3} alt=""/>
-    <img src={sf4} alt=""/>
-  </div>
-</div>
-
-          </div>
+         
         
           
         </Slider>
@@ -120,6 +152,7 @@ export default function Projects({vid}) {
 
 <br/>
 <br/>
+
 
 </div>
        
