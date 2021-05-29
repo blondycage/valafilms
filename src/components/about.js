@@ -1,40 +1,46 @@
 import React from 'react'
 import img1 from "../files/Guzape1.jpeg"
-import img2 from "../files/Guzape2.jpeg"
-import img3 from "../files/Guzape3.jpeg"
-import img4 from "../files/Guzape4.jpeg"
-import img5 from "../files/Guzape5.jpeg"
+import img2 from "../files/chr4.jpg"
+import img3 from "../files/chr3.jpg"
+import img4 from "../files/chr2.jpg"
+import img5 from "../files/chr.jpg"
 import Button from '@material-ui/core/Button';
 export default function about () {
     return (
         <div className="aboutus ">
-          <div className="pcontent">
-          
-          <h1>Who We ARE</h1>
-          We are a Grooup of creatives,just like you,seeking to create opportunities for people like us in the movie production industry
-          </div>
-          <div className="pcontent">
-          <h1>MORE ABOUT US</h1>
-          <h2>VALA FILMS</h2>
-          <p>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
-          </div>
-          <div className="pcontent">
-          
-          <h2>What we intend to accomplish</h2>
-          <p>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
-          <ul><li>Connect Creatives</li>
-          <li>Guide and Enhance the quality of content by connecting creatives with the best teams</li>
-          <li>Create and find opportunities that empower</li>
-          <li>improve the entire entertainment space together</li></ul></div>
-          <div className="pcontent">
-        
-          <h2>What We Do</h2>
-          <p>Vala films is a bridge for film creatives to collaborateand create together.We create platforms for different facets of the film industry (in Abuja especially) to meet and combine  their skills and gifts to createcontent while protecting your own rights and the integrity of your content</p>
-          </div>
-          <div className="pcontent">
+          <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
+          <div className="flexdivider">
+<div className="teamflex">
+<div className="teanrow">
+  <div><img src={img5} alt=""  width='200px'/>
+  <div className="lk"><h4>rachel anniston</h4></div><div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div></div>
+  <div><img src={img4} alt=""  width='200px'/>  <div className="lk"><h4>Monica geller</h4></div><div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div>
+</div> 
+</div>
+<div className="teanrow">
+  <div><img src={img3} alt=""  width='200px'/>
+ <div className="lk"><h4>matt leblanc</h4></div> <div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div></div>
+  <div><img src={img2} alt=""  width='200px'/> 
+<div className="lk"><h4>lisa judrow</h4></div><div className='lk'>  <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div>
+</div>  
+</div>
+</div>
+<div className="teamdesc">
+    <h2>OUR TEAM</h2>
+    <h1> amet, consectetur adipisicing elit. Aliquid error delectus repudiandae quasi voluptates omnis temporibus. Sapiente, dolor.</h1>
 
-          <h2>How You Fit In</h2>
-         <p>Are you a Writer? <br/> An actor A Cinematographer <br/> or are you involved in any aspect of filmmaking and seeking opportunities to share your gifts with the world? Do you have ideas that require the best teams to execute? Send an Email to info@valafilms@gmail.com and hop on board </p></div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum necessitatibus quo aperiam adipisci labore debitis quidem, sapiente alias laborum sunt similique soluta odit aspernatur illum quasi ullam rerum minima fugit!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis odit ipsam modi natus ea similique iure! Iure itaque asperiores saepe.</p>
+</div>
+          </div>
+          </div>
         </div>
     )
 }

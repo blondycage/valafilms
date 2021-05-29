@@ -29,23 +29,29 @@ align-items: flex-start;
   display: flex;
   justify-content: space-evenly;
 }
+
 .fleximg{
   display: flex;
  
   flex-wrap: wrap ;
 }
 .fleximg img{
-  max-width: 50px;
+  max-width: 100px;
+  min-width: 100px;
   padding: 10px;
-  max-height: 40px;
+  max-height: 60px;
+  height: 60px;
+  min-height: 60px;
   cursor: pointer;
 }
 .fleximg img:hover{
-  max-width: 80px;
-  max-height: 60px;
+  max-width: 120px;
+  max-height: 80px;
+  width:120px ;
+  height: 100px;
+
 }
-.flexcol{
-  display: flex;
+ .flexcol{ display: flex;
   flex-direction: column;
 }
 .pcontent{
@@ -96,7 +102,7 @@ align-items: flex-start;
 }
 .homecon{
   position: fixed;
-  top: 30px;
+  top: 20px;
   left: 50px;
   z-index: 4000;
   color: white;
@@ -243,8 +249,22 @@ z-index: 600;
 .rodalform{
   display: flex;
   flex-direction: column;
-}.rodalform *{
+  background-color: white;
+align-items: center;
+  justify-content: center;
+}
+.rodalform h4{
+  color: teal;
+  text-align: center;
+}
+.rodalform label{
   color: black;
+  font-weight: bold;
+}
+.rodalform *{
+  margin-left: 20px;
+  width:400px
+
 }
 .workers img {
   width: 200px;
@@ -338,9 +358,9 @@ z-index: 600;
 
 .ic{
   position: absolute;
-  bottom: 0;
+  bottom: 20%;
   right: 10px;
-  z-index: 3000;
+  z-index: 99;
 }
 .fa:hover {
     opacity: 0.7;
@@ -393,11 +413,20 @@ opacity: 1;
 .App-link {
   color: #61dafb;
 }
+.flexdivider{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+}
+.teanrow{
+  display: flex;
+}
 #nav-icon2 {
   width: 60px;
   height: 45px;
   position: fixed;
-  top: 30px;
+  top: 20px;
   right: 30px;
   z-index: 5001;
   -webkit-transform: rotate(0deg);
@@ -485,12 +514,12 @@ text-align: left;
 }
 .vidwriteup{
   position: absolute;
-  bottom:30%;
+  bottom:20%;
   left: 5%;
   text-transform: uppercase;
   color: white;
   max-width: 400px;
-  z-index: 399;
+  z-index: 99;
 }
 .vidwriteup p{
   color: aqua;
@@ -501,8 +530,8 @@ font-family:  'Abril Fatface', cursive;
 }
 .vidwriteup h1{
   font-family: 'Big Shoulders Display', cursive;
-  font-size: 50px;
-text-align: justify;
+  font-size: 35px;
+
 }
 #nav-icon2 span {
   display: block;
@@ -663,4 +692,44 @@ input{
 }
 .rodal-dialogue{
   padding: 0px;
+}
+.rodal-mask {
+  position: absolute;
+  background: black;
+}
+.teamdesc{
+  max-width: 500px;
+  margin-right: 7%;
+ 
+}
+.teamdesc *{
+  text-align: right;
+}
+.teamdesc h2{
+  color: teal;
+  margin: 0;
+}
+.teanrow{ 
+  display: flex;
+  gap: 50px;
+ 
+}
+.teamflex{
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+.lk{
+  display: flex;
+  justify-content: center;
+}
+.lk .fa{
+  color: teal;
+}
+.lk h4{
+  margin: 0;
+}
+.adminform input,.adminform textarea{
+background-color: black;
 }

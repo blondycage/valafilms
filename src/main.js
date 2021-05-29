@@ -47,14 +47,16 @@ const[view,setview]=useState('home');
       case 'adverts':
         return <Ad vid ={Vid3}/>
         case 'about':
-          return <Ab vid />
+          return <Ab  />
+          case 'team':
+            return <Ab  />
     default:
       return <p>Your current feed</p>
   }
 
 }
 useEffect(() => {
-  if (pageYOffset > 200) {
+  if (pageYOffset > 100) {
       setVisiblity("black");
   } else {
       setVisiblity("");
@@ -70,12 +72,15 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1>V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal visible={showModal} width={800} height={400} enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+       <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
                     <div className="rodalform"><h4> CONTACT US @CONTACT.VALAFILMS.COM OR LEAVE US A MESSAGE </h4>
-                    <input type="text" placeholder="email"/>
+                    <label htmlFor="txt">ENTER YOU EMAIL</label>  <input type="text" placeholder="email"/>
+                    <label htmlFor="txt">ENTER YOUR FULLNAME</label>
                     <input type="text" placeholder="fullname"/>
-                    <label htmlFor="txt">introduce yourself</label>
+                    <label htmlFor="txt">INTRODUCE YOURSELF</label>
                     <textarea name="txt" id="" cols="30" rows="10"></textarea>
+                    <button>Submit</button>
+                    <br />
                     </div>
                 </Rodal>
                 </div>
@@ -113,6 +118,7 @@ console.log(showModal);setstyle2(!styleCondition2);setstyle(!styleCondition);;se
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>films</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('collab');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>collaborations</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('adverts');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>commercials</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('team');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>team</h1>
 <Link to="/admin" style={{color:'white'}}><h1 className={styleCondition3 ? "slidedown" : "slideup"}>Admin</h1></Link>
 
 

@@ -1,6 +1,6 @@
 import {React ,useState,useEffect}from 'react'
 import Slider from "react-slick";
-import img from "../files/Guzape1.jpeg"
+import logovid from "../files/logo2.mp4"
 import firebase from "./firebase"
 import img14 from "./1.jpg"
 import img15 from "./2.jpg"
@@ -19,10 +19,10 @@ export default function Homepage({vid}) {
    
     
   };
-  const [link,setlink] = useState("")
+  const [link,setlink] = useState()
  
   const loadContent= ()=>{
-    const todoRef = firebase.database().ref('vala/settings/homepage/landingvideo');
+    const todoRef = firebase.database().ref('/vala/settings/homepage/landingvideo');
     todoRef.on('value', (snapshot) => {
      setlink(snapshot.val())
      console.log(link)
@@ -36,8 +36,12 @@ export default function Homepage({vid}) {
     }
     // Execute the created function directly
     anyNameFunction();
-  }, []);
+    console.log("")
+
+  },[link]);
     return (
+     <div>{!!link?  
+    
         <div>
               <div className="vidcon">
               <div className="ic">
@@ -99,26 +103,11 @@ export default function Homepage({vid}) {
           </div> </div>
          
         </Slider>
-        <h2 style={{textAlign:"center",color:'teal'}}>MEET THE TEAM</h2>
-        <br/>
-        <div className="workers">
-   <div> <img src={img14} alt=""/>
-   <h4 style={{textAlign:"center",color:'white'}}>Mike Surloff</h4>
-     <small style={{textAlign:"center",color:'white'}}>CSO & Head of Markets</small></div>
-     <div style={{textAlign:"center",color:'white'}}>  <img src={img15} alt=""/>
-     <h4 style={{textAlign:"center",color:'white'}}>Jonathan Turner</h4>
-     <small style={{textAlign:"center",color:'white'}}>CFO </small>
-     
-     </div>
-   
-    <div>  <img src={img16} alt=""/>
-    <h4 style={{textAlign:"center",color:'white'}}> Amanda Benedict</h4>
-     <small style={{textAlign:"center",color:'white'}}>I.T lead & Social media Manager</small></div>
-   <div>  <img src={img17} alt=""/> <h4 >Paul Rife</h4>
-     <small style={{textAlign:"center",color:'white'}}>Financial Manager</small>
-     </div>
-   
-   </div>
+        
+        </div>:<div style={{display:'flex',justifyContent:'center',alignItems:'center',paddingTop:'3%',
+     minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
+     <source src={logovid} type="video/mp4"/>
+   </video></div> }
         </div>
     )
 }

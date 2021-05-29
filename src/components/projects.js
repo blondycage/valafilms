@@ -16,11 +16,14 @@ import sf5 from "../files/sf5.jpeg"
 import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
 import sf8 from "../files/sf8.jpeg"
+import logovid from "../files/logo2.mp4"
+import Carousel from 'react-gallery-carousel';
+import 'react-gallery-carousel/dist/index.css';
 import Slider from "react-slick";
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+
 import Rodal from 'rodal';
 import {useState,useEffect  } from "react";
 import { teal, purple } from '@material-ui/core/colors';
@@ -39,19 +42,23 @@ export default function Projects({vid}) {
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 15000,
   };
+  let images=[]
   const loadContent= ()=>{
-    const todoRef = firebase.database().ref('filmpages/slides');
+    const todoRef = firebase.database().ref();
     todoRef.on('value', (snapshot) => {
      setobj(snapshot.val())
-     
-      
+     console.log()
+      setobj2(snapshot.val().filmpages.slides)
+      setlink(snapshot.val().vala.settings.film.landingvideo)
 
     }); }
-    const [obj,setobj]= useState({})
-   
- 
+    const [obj,setobj]= useState()
+    const [imgs,setimgs]= useState([])
+   const[obj2,setobj2]=useState()
+   const [link,setlink] = useState()
+
   const ColorButton = withStyles((theme) => ({
     root: {
       color: theme.palette.getContrastText(teal[500]),
@@ -77,12 +84,16 @@ useEffect(() => {
 "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"},{"header":"STILL FALLING",
 "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"}]
     return (
+      <div> {!!obj?
         <div>
  <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal  customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
+  
+   <div>{ showModal && <div className='tint' style={{backgroundColor:'black',minWidth:'100vw',minHeight:'100vh',zIndex:'400'}}></div>}
+   <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
        <YoutubeEmbed embedId="rokGy0huYEA" />      
-                </Rodal>
-                <Rodal  customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal2} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
+                </Rodal></div>
+       
+                <Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal2} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
        <img style={{width:"100%"}}  src={`${current}`} alt=""/>      
                 </Rodal>
                 </div>
@@ -99,7 +110,7 @@ useEffect(() => {
 <a href="#" className="fa fa-instagram"></a>
 </div>
       <video autoPlay muted loop id="myVideo">
-  <source src={vid} type="video/mp4"/>
+  <source src={`${link}`} type="video/mp4"/>
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
@@ -114,34 +125,41 @@ useEffect(() => {
 <br/>
 <Slider {...settings}>
 { 
-   !!obj && Object.keys(obj).map((item, i) => (
+   !!obj2 && Object.keys(obj2).map((item, i) => (
       <div className="flexcol">
       <div className="flexunder">
 <div className="content"> 
-<h2>{obj[item].TITLE}</h2>
-<p>{obj[item].CAPTION}</p>
+<h2>{obj2[item].TITLE}</h2>
+<p>{obj2[item].CAPTION}</p>
 <ColorButton className={"trailer"} variant="contained" color="secondary" onClick={()=>{setmodal(true)}}>Watch Trailer</ColorButton>
 </div>
 <div className="poster">
-  <img src={obj[item].poster} alt=""/>
+  <img src={obj2[item].poster} alt=""/>
 </div>
 </div>
 <div className="flexrow">
 
-<div className="fleximg">
-{obj[item].supprtingimages.map((imgurl, index) => (
-      < img src={`${imgurl.url}`} alt="hey" onClick={()=>{
-        setmodal2(true);
-        setcurrent(imgurl.url)
-      }}/>
+<div >
+{obj2[item].supprtingimages.map((imgurl, index) => (
+      
      
-    ))}
+      images.push({src:imgurl.url,sizes: '(max-width: 000px) 400px'})
+     
+    ))
 
+    }
+    
+
+<div style={{maxWidth:"800px"}}>
+        <Carousel images={images}  hasSizeButton={false} thumbnailWidth='100px' thumbnailHeight='50px' />
+     
+      </div>
 </div>
 </div>
 
       </div>
     ))
+
 }  
 
          
@@ -154,6 +172,10 @@ useEffect(() => {
 <br/>
 
 
+</div>:<div style={{display:'flex',justifyContent:'center',alignItems:'center',paddingTop:'3%',
+     minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
+     <source src={logovid} type="video/mp4"/>
+   </video></div>}
 </div>
        
     )

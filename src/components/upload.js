@@ -33,6 +33,7 @@ export default function UploadImage({path}) {
     
      await slideref.set(slideobject);
      alert('done')
+     window.location.reload();
   
   };
   const readposter = async (e) => {
@@ -64,7 +65,7 @@ export default function UploadImage({path}) {
   }
   
   return (
-    <div>
+    <div className='adminform'>
         <div style={{display:"flex",flexDirection:'column'}}><h1>Upload poster</h1>
         <input type="file" accept="image/*" onChange={readposter} />
         
