@@ -22,7 +22,15 @@ import 'react-gallery-carousel/dist/index.css';
 import Slider from "react-slick";
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
+
+
 
 import Rodal from 'rodal';
 import {useState,useEffect  } from "react";
@@ -34,6 +42,18 @@ export default function Projects({vid}) {
   const [showModal,setmodal]= useState(false)
   const [showModal2,setmodal2]= useState(false)
   const [current,setcurrent]= useState("")
+  const [currentitem,setcurrentitem]= useState()
+  const [currentind,setcurrentind]= useState()
+  const useStyles = makeStyles({
+    root: {
+     backgroundColor:"black",
+     zIndex:8000
+    },
+    bg:{
+      backgroundColor:'black',
+      zIndex:8000
+    }
+  });
   const settings = {
     dots: true,
     infinite: true,
@@ -43,7 +63,38 @@ export default function Projects({vid}) {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 15000,
+    arrows:false
   };
+  const settings2 = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+
+  };
+  const [sett,setsettings]=React.useState({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+
+  });
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down('xl'));
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   let images=[]
   const loadContent= ()=>{
     const todoRef = firebase.database().ref();
@@ -53,12 +104,13 @@ export default function Projects({vid}) {
       setobj2(snapshot.val().filmpages.slides)
       setlink(snapshot.val().vala.settings.film.landingvideo)
 
+
     }); }
     const [obj,setobj]= useState()
     const [imgs,setimgs]= useState([])
    const[obj2,setobj2]=useState()
    const [link,setlink] = useState()
-
+   const [imgarr,setarr] = useState([])
   const ColorButton = withStyles((theme) => ({
     root: {
       color: theme.palette.getContrastText(teal[500]),
@@ -80,11 +132,48 @@ useEffect(() => {
   
  
 }, []);
+const classes = useStyles()
   let movies=[{"header":"LOUD SILENCE",
 "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"},{"header":"STILL FALLING",
 "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, atque distinctio dolor blanditiis natus asperiores explicabo quo sequi quod at deleniti aspernatur vel possimus dolores aliquam, velit tempore, quidem odio error debitis voluptas. Velit doloribus adipisci numquam, tenetur hic labore?"}]
     return (
-      <div> {!!obj?
+      <div>
+
+         <Dialog
+        fullScreen={fullScreen}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="responsive-dialog-title"
+       
+      >
+     <div style ={{display:'flex',backgroundColor:'black'}}>
+          <Button  onClick={handleClose} color="primary">
+          X
+          </Button>
+          </div>
+     
+        <DialogContent  className={classes.bg}>
+        <div>
+       
+        <Slider {...sett}>
+        {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
+      <div>dd
+    
+      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'800px',maxHeight:'800px',margin:'0 auto'}} key={index} />
+<br />
+
+
+     </div>
+    ))
+
+    }
+        </Slider>
+      </div>
+        </DialogContent>
+        
+      </Dialog>
+        
+         {!!obj?
         <div>
  <div style={{zIndex:"6000",color:"white"}}>
   
@@ -93,9 +182,7 @@ useEffect(() => {
        <YoutubeEmbed embedId="rokGy0huYEA" />      
                 </Rodal></div>
        
-                <Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal2} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
-       <img style={{width:"100%"}}  src={`${current}`} alt=""/>      
-                </Rodal>
+               
                 </div>
 
 
@@ -139,23 +226,36 @@ useEffect(() => {
 </div>
 <div className="flexrow">
 
-<div >
+<div className='fleximg' >
 {obj2[item].supprtingimages.map((imgurl, index) => (
+      <div>
+     {console.log(item)}
+      < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
       
-     
-      images.push({src:imgurl.url,sizes: '(max-width: 000px) 400px'})
-     
+        setsettings({...sett,initialSlide:index})
+        setcurrentitem(item)
+      handleClickOpen()
+        
+      }}/>
+<br />
+
+
+     </div>
     ))
 
     }
+
     
 
-<div style={{maxWidth:"800px"}}>
-        <Carousel images={images}  hasSizeButton={false} thumbnailWidth='100px' thumbnailHeight='50px' />
-     
-      </div>
+
 </div>
+
+
 </div>
+<Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0",zIndex:'6000'}} visible={showModal2} width={1000} height={1000} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
+
+
+                </Rodal>
 
       </div>
     ))

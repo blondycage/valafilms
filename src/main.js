@@ -96,7 +96,7 @@ const [showModal,setmodal]= useState(false)
   <span ></span>
   <span></span>
 
-
++
       </div>
 
   <div className={styleCondition ? "nav" : "nav show"}>
