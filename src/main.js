@@ -122,12 +122,12 @@ setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition
    CONTACT US
 </h1>
 <div className={styleCondition3 ? "slidedown " : "slideup "} onClick={()=>{setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>
-                 <a href="#" className="fa fa-facebook"></a>
+               <div className="aflex"> <a href="#" className="fa fa-facebook"></a>
 <a href="#" className="fa fa-twitter"></a>
 <a href="#" className="fa fa-google"></a>
 <a href="#" className="fa fa-linkedin"></a>
 <a href="#" className="fa fa-youtube"></a>
-<a href="#" className="fa fa-instagram"></a>
+<a href="#" className="fa fa-instagram"></a></div> 
 </div>
 <Link to="/admin" style={{color:'white'}}><h1 className={styleCondition3 ? "slidedown" : "slideup"}>Admin</h1></Link>
 

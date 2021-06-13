@@ -166,7 +166,7 @@ const classes = useStyles()
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
       <div>dd
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",maxHeight:'100vh',margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",margin:'0 auto'}} key={index} />
 <br />
 
 
