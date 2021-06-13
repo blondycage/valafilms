@@ -27,6 +27,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
@@ -51,7 +53,13 @@ export default function Collab({vid}) {
     },
     bg:{
       backgroundColor:'black',
-      zIndex:8000
+      zIndex:8000,
+      width:"100vw"
+    },
+    icon:{
+      color:"white",
+      width:"30px",
+      height:"30px"
     }
   });
   const settings = {
@@ -147,9 +155,9 @@ const classes = useStyles()
        
       >
      <div style ={{display:'flex',backgroundColor:'black'}}>
-          <Button  onClick={handleClose} color="primary">
-          X
-          </Button>
+          <IconButton  onClick={handleClose} className={classes.icon}>
+       <CloseIcon/>
+          </IconButton>
           </div>
      
         <DialogContent  className={classes.bg}>
@@ -159,7 +167,7 @@ const classes = useStyles()
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
       <div>dd
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'800px',maxHeight:'800px',margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",maxHeight:'100vh',margin:'0 auto'}} key={index} />
 <br />
 
 
@@ -188,28 +196,19 @@ const classes = useStyles()
 
 
                  <div className="vidcon">
-                   <div className="ic">
-                 <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a>
-<a href="#" className="fa fa-linkedin"></a>
-<a href="#" className="fa fa-youtube"></a>
-<a href="#" className="fa fa-instagram"></a>
-</div>
+                 
       <video autoPlay muted loop id="myVideo">
   <source src={`${link}`} type="video/mp4"/>
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">EV DE KAL  </h1>
-<h4>TURKCELL COVID 19 TEAM </h4> 
+  <h1 className="slideup">COLLABORATIONS  </h1>
+<h4>A list of projects we were a part of </h4> 
 
 </div>
 
 </div>
-<br/>
-<h1 style={{color:"teal",textAlign:"center",fontSize:"35px"}}>COLLABORATIONS</h1>
-<br/>
+
 <Slider {...settings}>
 { 
    !!obj2 && Object.keys(obj2).map((item, i) => (

@@ -34,11 +34,14 @@ export default function about () {
 </div>
 </div>
 <div className="teamdesc">
-    <h2>OUR TEAM</h2>
+  
+  <h2>OUR TEAM</h2>
     <h1> amet, consectetur adipisicing elit. Aliquid error delectus repudiandae quasi voluptates omnis temporibus. Sapiente, dolor.</h1>
 
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum necessitatibus quo aperiam adipisci labore debitis quidem, sapiente alias laborum sunt similique soluta odit aspernatur illum quasi ullam rerum minima fugit!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis odit ipsam modi natus ea similique iure! Iure itaque asperiores saepe.</p>
-</div>
+
+ 
+   </div>
           </div>
           </div>
         </div>

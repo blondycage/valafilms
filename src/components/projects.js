@@ -17,6 +17,8 @@ import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
 import sf8 from "../files/sf8.jpeg"
 import logovid from "../files/logo2.mp4"
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 import Slider from "react-slick";
@@ -52,6 +54,11 @@ export default function Projects({vid}) {
     bg:{
       backgroundColor:'black',
       zIndex:8000
+    },
+    icon:{
+      color:"white",
+      width:"30px",
+      height:"30px"
     }
   });
   const settings = {
@@ -147,9 +154,9 @@ const classes = useStyles()
        
       >
      <div style ={{display:'flex',backgroundColor:'black'}}>
-          <Button  onClick={handleClose} color="primary">
-          X
-          </Button>
+          <IconButton  onClick={handleClose} className={classes.icon}>
+          <CloseIcon/>
+          </IconButton>
           </div>
      
         <DialogContent  className={classes.bg}>
@@ -159,7 +166,7 @@ const classes = useStyles()
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
       <div>dd
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'800px',maxHeight:'800px',margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",maxHeight:'100vh',margin:'0 auto'}} key={index} />
 <br />
 
 
@@ -188,28 +195,19 @@ const classes = useStyles()
 
 
                  <div className="vidcon">
-                   <div className="ic">
-                 <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a>
-<a href="#" className="fa fa-linkedin"></a>
-<a href="#" className="fa fa-youtube"></a>
-<a href="#" className="fa fa-instagram"></a>
-</div>
+                   
       <video autoPlay muted loop id="myVideo">
   <source src={`${link}`} type="video/mp4"/>
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">DARK CIRCLE </h1>
-<h4>a SHORT FILM BY CHAVALA YADUMA</h4> 
+  <h1 className="slideup">SHORT </h1>
+<h4>  FILMS BY CHAVALA YADUMA</h4> 
 
 </div>
 
 </div>
-<br/>
-<h1 style={{color:"teal",textAlign:"center",fontSize:"35px"}}>SHORTS</h1>
-<br/>
+
 <Slider {...settings}>
 { 
    !!obj2 && Object.keys(obj2).map((item, i) => (

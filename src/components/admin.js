@@ -8,13 +8,17 @@ export default function Admin() {
     const [ad,setad]=useState()
     const [collab,setcollab]=useState()
     const [film,setfilm]=useState()
-   
+   const[filmsettings,setfilms]=useState(false)
+   const[homesettings,sethomes]=useState(true)
+   const[adsettings,setads]=useState(false)
+   const[collabsettings,setcollabs]=useState(false)
+
     return (
         <div className='adminform'>
             <h1 style={{color:"white",textAlign:"center"}}>welcome admin</h1>
             <div className="adcon">
-                <h3>HOMEPAGE SETTINGS</h3>
-                <div className="set">
+                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(true);setcollabs(false)}} className="hib">SHOW HOMEPAGE SETTINGS</h3>
+              {homesettings &&  <div className="set">
                     <form action="">
                     <label htmlFor="p1">videolink</label>
                     <input type="text" name='p1'required onChange={(e)=>{
@@ -31,9 +35,9 @@ firebase.database().ref('/vala/settings/homepage/landingvideo').set(home).then((
                     }}>upload</button>
                     </form>
                    
-                </div>
-                <h3>FILM PAGE SETTINGS</h3>
-                <div className="set">
+                </div>}
+                <h3 onClick={()=>{setfilms(true);setads(false);sethomes(false);setcollabs(false)}}className="hib">SHOW FILM PAGE SETTINGS</h3>
+              { filmsettings && <div className="set">
                     <div>
                     <form action="">
                     <label htmlFor="p2">videolink</label>
@@ -59,9 +63,9 @@ firebase.database().ref('/vala/settings/film/landingvideo').set(film).then(()=>{
 
                     </div>
                    
-                </div>
-                <h3>COLLAB PAGE SETTINGS</h3>
-                <div className="set">
+                </div>}
+                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(false);setcollabs(true)}}className="hib">SHOW COLLAB PAGE SETTINGS</h3>
+                { collabsettings &&<div className="set">
                     <div>
                     <form action="">
                     <label htmlFor="p2">videolink</label>
@@ -87,9 +91,9 @@ firebase.database().ref('/vala/settings/collab/landingvideo').set(collab).then((
 
                     </div>
                    
-                </div>
-                <h3>AD PAGE SETTINGS</h3>
-                <div className="set">
+                </div>}
+                <h3 onClick={()=>{setfilms(false);setads(true);sethomes(false);setcollabs(false)}}className="hib">SHOW AD PAGE SETTINGS</h3>
+                {adsettings && <div className="set">
                     <div>
                     <form action="">
                     <label htmlFor="p2">videolink</label>
@@ -115,7 +119,7 @@ firebase.database().ref('/vala/settings/ads/landingvideo').set(ad).then(()=>{
 
                     </div>
                    
-                </div>
+                </div>}
             </div>
         </div>
     )

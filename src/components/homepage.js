@@ -10,12 +10,13 @@ export default function Homepage({vid}) {
   const settings = {
    
     infinite: true,
-    speed: 500,
+    autoPlaySpeed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
    autoplay:true,
-    speed: 3000,
-    arrows:false
+    speed: 10000,
+    arrows:false,
+    pauseOnHover:true
    
     
   };
@@ -44,14 +45,7 @@ export default function Homepage({vid}) {
     
         <div>
               <div className="vidcon">
-              <div className="ic">
-                 <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a>
-<a href="#" className="fa fa-linkedin"></a>
-<a href="#" className="fa fa-youtube"></a>
-<a href="#" className="fa fa-instagram"></a>
-</div>
+              
       <video autoPlay muted loop id="myVideo">
   <source src={`${link}`} type="video/mp4"/>
 </video>
@@ -73,7 +67,7 @@ export default function Homepage({vid}) {
           <div>
           <div className="pcontent">
             <div>
-          <h1>MORE ABOUT US</h1>
+         
           <h2>VALA FILMS</h2>
           <p>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
           </div> </div>
