@@ -74,8 +74,12 @@ min-width: 70vw;
   
 }
 .pcontent h1,.pcontent h2{
-  color: goldenrod;
+  color: #ac7836;
   font-size: 30px;
+  text-transform: uppercase;
+}
+.pcontent h1{
+  text-transform: uppercase;
 }
 .pcontent *{
   text-align: center;
@@ -376,7 +380,7 @@ opacity: 1;
 }
 .fa:hover {
     
-    color: goldenrod;
+    color: #ac7836;
 }
 
 
@@ -405,7 +409,7 @@ opacity: 1;
   animation-timing-function: linear;
 }
 .nav-content-container h1:hover{
-  color: goldenrod;
+  color: #ac7836;
   cursor: pointer;
 }
 
@@ -727,13 +731,13 @@ input{
   text-align: right;
 }
 .teamdesc h2{
-  color: goldenrod;
+  color: #ac7836;
   margin: 0;
 }
 .teanrow{ 
   display: flex;
   gap: 50px;
- 
+ flex-wrap: wrap;
 }
 .teamflex{
   display: flex;
@@ -746,7 +750,7 @@ input{
   justify-content: center;
 }
 .lk .fa{
-  color:goldenrod;
+  color:#ac7836;
 }
 .lk h4{
   margin: 0;
@@ -756,7 +760,7 @@ input{
 background-color: black;
 }
 .hib{
-  background-color: goldenrod;
+  background-color: #ac7836;
   padding: 5px;
   cursor: pointer;
   width: fit-content;
@@ -858,5 +862,30 @@ background-color: black;
   /* align-self: center; */
   /* margin: auto; */
   margin-left: -50px;
+}
+.flexdivider{
+  flex-direction: column;
+}
+.teamdesc{
+  max-width: 500px;
+  margin: 0;
+
+
+  
+ 
+}
+.teamdesc *{
+  text-align: center;
+}
+.aboutus{
+  margin: 0;
+  margin-top: 20px;
+  margin: 20px auto;
+}.teanrow {
+  display: flex;
+  /* grid-gap: 50px; */
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 }

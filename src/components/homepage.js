@@ -75,7 +75,7 @@ export default function Homepage({vid}) {
           <div>
           <div className="pcontent">
           <div>
-          <h2>What we intend to accomplish</h2>
+          <h2>WHAT WE INTEND TO ACCOMPLISH</h2>
           <p>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
           <ul><li>Connect Creatives</li>
           <li>Guide and Enhance the quality of content by connecting creatives with the best teams</li>
@@ -87,12 +87,13 @@ export default function Homepage({vid}) {
           
           <div className="pcontent">
 <div>
-<h2>How You Fit In</h2>
+<h2>HOW YOU FIT IN</h2>
 <p>Are you a Writer? <br/> An actor A Cinematographer <br/> or are you involved in any aspect of filmmaking and seeking opportunities to share your gifts with the world? Do you have ideas that require the best teams to execute? Send an Email to info@valafilms@gmail.com and hop on board </p></div>
-</div></div>
+</div>
+</div>
 <div className="pcontent">
         <div>
-          <h2>What We Do</h2>
+          <h2>WhAT WE DO</h2>
           <p>Vala films is a bridge for film creatives to collaborateand create together.We create platforms for different facets of the film industry (in Abuja especially) to meet and combine  their skills and gifts to createcontent while protecting your own rights and the integrity of your content</p>
           </div> </div>
          
