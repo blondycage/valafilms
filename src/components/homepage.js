@@ -14,9 +14,10 @@ export default function Homepage({vid}) {
     slidesToShow: 1,
     slidesToScroll: 1,
    autoplay:true,
-    speed: 10000,
-    arrows:false,
-    pauseOnHover:true
+    speed: 1000,
+   
+    pauseOnHover:true,
+   
    
     
   };
@@ -58,43 +59,43 @@ export default function Homepage({vid}) {
 <br/>
 <Slider {...settings}>
           <div>
-          <div className="pcontent">
-          <div>
-          <h1>Who We ARE</h1>
-          <p>We are a Grooup of creatives,just like you,seeking to create opportunities for people like us in the movie production industry</p>
+          <div className="slidecontent">
+          <div style={{margin:'auto'}}>
+          <h2>Who We ARE</h2>
+          <p className='hometext'>We are a Grooup of creatives,just like you,seeking to create opportunities for people like us in the movie production industry</p>
           </div> </div>
           </div>
           <div>
-          <div className="pcontent">
+          <div className="slidecontent">
             <div>
          
           <h2>VALA FILMS</h2>
-          <p>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
+          <p className='hometext'>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
           </div> </div>
           </div>
           <div>
-          <div className="pcontent">
+          <div className="slidecontent">
           <div>
           <h2>WHAT WE INTEND TO ACCOMPLISH</h2>
-          <p>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
-          <ul><li>Connect Creatives</li>
-          <li>Guide and Enhance the quality of content by connecting creatives with the best teams</li>
-          <li>Create and find opportunities that empower</li>
-          <li>improve the entire entertainment space together</li></ul></div></div>
+          <p className='hometext'>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
+          <ul><li className='hometext'> Connect Creatives</li>
+          <li className='hometext'>Guide and Enhance the quality of content by connecting creatives with the best teams</li>
+          <li className='hometext'>Create and find opportunities that empower</li>
+          <li className='hometext'>improve the entire entertainment space together</li></ul></div></div>
           
           </div>
           <div>
           
-          <div className="pcontent">
+          <div className="slidecontent">
 <div>
 <h2>HOW YOU FIT IN</h2>
-<p>Are you a Writer? <br/> An actor A Cinematographer <br/> or are you involved in any aspect of filmmaking and seeking opportunities to share your gifts with the world? Do you have ideas that require the best teams to execute? Send an Email to info@valafilms@gmail.com and hop on board </p></div>
+<p className='hometext'>Are you a Writer? <br/> An actor A Cinematographer <br/> or are you involved in any aspect of filmmaking and seeking opportunities to share your gifts with the world? Do you have ideas that require the best teams to execute? Send an Email to info@valafilms@gmail.com and hop on board </p></div>
 </div>
 </div>
-<div className="pcontent">
-        <div>
+<div className="slidecontent">
+        <div className="wrapper">
           <h2>WhAT WE DO</h2>
-          <p>Vala films is a bridge for film creatives to collaborateand create together.We create platforms for different facets of the film industry (in Abuja especially) to meet and combine  their skills and gifts to createcontent while protecting your own rights and the integrity of your content</p>
+          <p className='hometext'>Vala films is a bridge for film creatives to collaborateand create together.We create platforms for different facets of the film industry (in Abuja especially) to meet and combine  their skills and gifts to createcontent while protecting your own rights and the integrity of your content</p>
           </div> </div>
          
         </Slider>

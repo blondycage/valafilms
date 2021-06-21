@@ -68,22 +68,40 @@ min-width: 70vw;
   
  
 }
+.hometext{
+  font-size: 40px;
+  text-align: center;
+   margin: auto;
+}
+.slidecontent{
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  margin: auto;
+}
+.slidecontent p{
+max-width: 80%;
+font-size: 35px;
+color :white;
+
+}
 .pcontent div{
   
-  padding: 15px;
+
   
 }
-.pcontent h1,.pcontent h2{
+.slidecontent h1,.slidecontent h2{
   color: #ac7836;
-  font-size: 30px;
+  font-size: 40px;
   text-transform: uppercase;
+  text-align: center;
 }
 .pcontent h1{
   text-transform: uppercase;
 }
 .pcontent *{
   text-align: center;
-  max-width: 450px;
+  width: 80vw;
 }
 .navcontainer{
   height: 80px;
@@ -262,7 +280,7 @@ z-index: 600;
 .rodalform{
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
 align-items: center;
   justify-content: center;
 }
@@ -271,12 +289,12 @@ align-items: center;
   text-align: center;
 }
 .rodalform label{
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 .rodalform *{
   margin-left: 20px;
-  width:400px
+  width:70vw;
 
 }
 .workers img {
@@ -394,8 +412,7 @@ opacity: 1;
  .nav-content-container>h1{
   margin: 2px;
   text-align: left;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
+  font-family: 'Big Shoulders Display', cursive; -webkit-font-smoothing: antialiased;
     font-size: 35px;
   text-transform: uppercase;
   transform-origin: bottom;
@@ -847,8 +864,8 @@ background-color: black;
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 0 1px rgb(255 255 255 / 10%);
   z-index: 400;
-  text-align: center;
-  width: fit-content;
+  
+ 
   margin: auto;
 }
 .radar {
@@ -887,5 +904,51 @@ background-color: black;
   gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
+}
+.hometext{
+  font-size: 30px;
+  text-align: center;
+  
+}
+.slidecontent{
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  margin: auto;
+ margin-right: 20px;
+  align-items: center;
+}
+.slidecontent p{
+width: 100%;
+font-size: 18px;
+color :white;
+
+}
+.slidecontent h1,.slidecontent h2{
+  color: #ac7836;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+}
+#myVideo {
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 65vh;
+}.fa{
+
+  font-size: 20px;
+  padding: 10px;
+}
+.radar img{
+  max-width: 80px;
 }
 }

@@ -72,8 +72,8 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1>V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
-                    <div className="rodalform"><h4> CONTACT US @CONTACT.VALAFILMS.COM OR LEAVE US A MESSAGE </h4>
+       <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"10px",width:"80vw",height:"auto"}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+                    <div className="rodalform"><h4> CONTACT US @CONTACT.VALAFILMS.COM OR LEAVE US A MESSAGE </h4>}
                     <label htmlFor="txt">ENTER YOU EMAIL</label>  <input type="text" placeholder="email"/>
                     <label htmlFor="txt">ENTER YOUR FULLNAME</label>
                     <input type="text" placeholder="fullname"/>
@@ -100,9 +100,10 @@ const [showModal,setmodal]= useState(false)
       </div>
 
   <div className={styleCondition ? "nav" : "nav show"}>
-  <p className="cp-text">
+    <div style={{display:'flex',justifyContent:'center'}}> <p className="cp-text">
     © Copyright 2021 Valafilms. All rights reserved.
-</p>
+</p></div>
+  
 
 
 <div className="radar">
