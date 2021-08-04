@@ -72,13 +72,20 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1>V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"10px",width:"80vw",height:"auto"}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
-                    <div className="rodalform"><h4> CONTACT US @CONTACT.VALAFILMS.COM OR LEAVE US A MESSAGE </h4>}
+       <Rodal className="element" customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+                    <div className="rodalform"><h4> CONTACT US @CONTACT.VALAFILMS.COM OR LEAVE US A MESSAGE </h4>
                     <label htmlFor="txt">ENTER YOU EMAIL</label>  <input type="text" placeholder="email"/>
                     <label htmlFor="txt">ENTER YOUR FULLNAME</label>
                     <input type="text" placeholder="fullname"/>
-                    <label htmlFor="txt">INTRODUCE YOURSELF</label>
-                    <textarea name="txt" id="" cols="30" rows="10"></textarea>
+                    <label htmlFor="txt">-field (directing,acting,voice acting, cinematography, color grading, sound design,  Etc)</label>
+                    <textarea name="txt" id="" cols="30" rows="5"></textarea>
+                    <label htmlFor="txt">LINK TO PREVIOUS WORK</label>
+                    <input type="text" placeholder="previous work"/>
+                    <label htmlFor="txt">HOW DID YOU HEAR ABOUT US?</label>
+                    <textarea name="txt" id="" cols="30" rows="5"></textarea>
+                    <label htmlFor="txt">LEAVE US A COMMENT/MESSAGE</label>
+                    <textarea name="txt" id="" cols="30" rows="5"></textarea>
+                    
                     <button>Submit</button>
                     <br />
                     </div>
@@ -120,7 +127,7 @@ const [showModal,setmodal]= useState(false)
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('team');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>team</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setmodal(true);
 setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}} style={{cursor:"pointer"}}> 
-   CONTACT US
+   JOIN US
 </h1>
 <div className={styleCondition3 ? "slidedown " : "slideup "} onClick={()=>{setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>
                <div className="aflex"> <a href="#" className="fa fa-facebook"></a>

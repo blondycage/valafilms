@@ -1,6 +1,10 @@
 import {React,useEffect,useState} from 'react'
 import firebase from "./firebase"
 import Upload from "./upload"
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
 export default function Admin() {
 
     const HOMEPAGE_VID_URL=firebase.database().ref()
@@ -12,10 +16,43 @@ export default function Admin() {
    const[homesettings,sethomes]=useState(true)
    const[adsettings,setads]=useState(false)
    const[collabsettings,setcollabs]=useState(false)
+   const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
     return (
+        <div>
+             <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="changes successfully uploaded"
+        action={
+          <div>
+            
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </div>
+        }
+      />
         <div className='adminform'>
             <h1 style={{color:"white",textAlign:"center"}}>welcome admin</h1>
+            <h3 onClick={()=>{window.location.href="/"}}className="hib">Back to Home</h3>
             <div className="adcon">
                 <h3 onClick={()=>{setfilms(false);setads(false);sethomes(true);setcollabs(false)}} className="hib">SHOW HOMEPAGE SETTINGS</h3>
               {homesettings &&  <div className="set">
@@ -27,7 +64,7 @@ sethome(e.target.value)
                     }}/>
                     <button type='submit' onClick={()=>{
 firebase.database().ref('/vala/settings/homepage/landingvideo').set(home).then(()=>{
-    alert('homepage video changed successfully')
+    handleClick()
 })
 
 
@@ -47,7 +84,7 @@ setfilm(e.target.value)
                     }}/>
                     <button type='submit' onClick={()=>{
 firebase.database().ref('/vala/settings/film/landingvideo').set(film).then(()=>{
-    alert('filmpage video changed successfully')
+    handleClick()
 })
 
 
@@ -75,7 +112,7 @@ setcollab(e.target.value)
                     }}/>
                     <button type='submit' onClick={()=>{
 firebase.database().ref('/vala/settings/collab/landingvideo').set(collab).then(()=>{
-    alert('collaboration video changed successfully')
+    handleClick()
 })
 
 
@@ -103,7 +140,7 @@ setad(e.target.value)
                     }}/>
                     <button type='submit'onClick={()=>{
 firebase.database().ref('/vala/settings/ads/landingvideo').set(ad).then(()=>{
-    alert('ads video changed successfully')
+    handleClick()
 })
 
 
@@ -121,6 +158,7 @@ firebase.database().ref('/vala/settings/ads/landingvideo').set(ad).then(()=>{
                    
                 </div>}
             </div>
+        </div>
         </div>
     )
 }

@@ -39,6 +39,30 @@ import {useState,useEffect  } from "react";
 import { teal, purple } from '@material-ui/core/colors';
 import firebase from "./firebase"
 import YoutubeEmbed from "./embed";
+
+
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "white",zIndex:'10000' }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "white" ,zIndex:'10000'}}
+      onClick={onClick}
+    />
+  );
+}
 export default function Projects({vid}) {
   const [ind,setIndex]=useState(0)
   const [showModal,setmodal]= useState(false)
@@ -62,7 +86,7 @@ export default function Projects({vid}) {
     }
   });
   const settings = {
-    dots: true,
+    
     infinite: true,
  
     slidesToShow: 1,
@@ -70,13 +94,15 @@ export default function Projects({vid}) {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 15000,
-    arrows:false
+    
+    className: 'slides'
+    
   };
   const settings2 = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: false,
 

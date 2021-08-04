@@ -2,10 +2,7 @@ import {React ,useState,useEffect}from 'react'
 import Slider from "react-slick";
 import logovid from "../files/logo2.mp4"
 import firebase from "./firebase"
-import img14 from "./1.jpg"
-import img15 from "./2.jpg"
-import img16 from "./3.jpg"
-import img17 from "./4.jpg"
+import YouTube from 'react-youtube';
 export default function Homepage({vid}) {
   const settings = {
    
@@ -20,6 +17,23 @@ export default function Homepage({vid}) {
    
    
     
+  };
+  const _onReady=(event)=>{
+    // access to player in all event handlers via event.target
+    event.target.mute();
+    event.target.playVideo();
+  }
+  
+  const _onEnd =(event)=> {
+    event.target.playVideo();
+  }
+  const videoOptions = {
+    playerVars: { // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+      controls: 0,
+      rel: 0,
+      showinfo: 0
+    }
   };
   const [link,setlink] = useState()
  
@@ -45,11 +59,14 @@ export default function Homepage({vid}) {
      <div>{!!link?  
     
         <div>
-              <div className="vidcon">
-              
-      <video autoPlay muted loop id="myVideo">
+              <div className="vidcon ">
+              <div className="">
+        <div className="" id="myVideo">
+        <video autoPlay muted loop id="myVideo">
   <source src={`${link}`} type="video/mp4"/>
 </video>
+        </div>
+      </div>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
   <h1 className="slideup">SHORTS,ADS,<br/>
@@ -57,6 +74,7 @@ export default function Homepage({vid}) {
 </div>
 </div> <br/>
 <br/>
+
 <Slider {...settings}>
           <div>
           <div className="slidecontent">
@@ -76,12 +94,12 @@ export default function Homepage({vid}) {
           <div>
           <div className="slidecontent">
           <div>
-          <h2>WHAT WE INTEND TO ACCOMPLISH</h2>
-          <p className='hometext'>VALA means "supreme" in Farsi,the language spoken in iran,the definition of SUPREME is something very great,remarkable or extraordinary which is what we aim to achieve</p>
-          <ul><li className='hometext'> Connect Creatives</li>
-          <li className='hometext'>Guide and Enhance the quality of content by connecting creatives with the best teams</li>
-          <li className='hometext'>Create and find opportunities that empower</li>
-          <li className='hometext'>improve the entire entertainment space together</li></ul></div></div>
+          <h2>OUR MISSION IS TO:</h2>
+         
+             <p className='hometext'>* Connect Creatives</p>
+          <p className='hometext'> * Guide and Enhance the quality of content by connecting creatives with the best teams</p>
+          <p className='hometext'>* Create and find opportunities that empower</p>
+          <p className='hometext'>* improve the entire entertainment space together</p></div></div>
           
           </div>
           <div>

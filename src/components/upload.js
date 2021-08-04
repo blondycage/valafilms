@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import firebase from './firebase';
 import { v4 as uuid } from 'uuid';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 export default function UploadImage({path}) {
   const [imageUrl, setImageUrl] = useState([]);
   const [posterurl,setsposter]= useState("")
@@ -10,6 +13,8 @@ export default function UploadImage({path}) {
   const [title,settitle]=useState("")
   const [trailerlink,settrailer]=useState("")
   const[supporting,setsupporting]=useState("")
+  const [open, setOpen] = useState(false);
+
   const readImages = async (e) => {
     const file = e.target.files[0];
     const id = uuid();
@@ -23,6 +28,17 @@ export default function UploadImage({path}) {
       setImageUrl(newState);
     });
   };
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   const save =async () => {
    const si={supprtingimages:imageUrl}
   const id=uuid()
@@ -32,7 +48,7 @@ export default function UploadImage({path}) {
     
     
      await slideref.set(slideobject);
-     alert('done')
+     setOpen(true)
      window.location.reload();
   
   };
@@ -63,8 +79,33 @@ export default function UploadImage({path}) {
     
 
   }
-  
+  const isInvalid =
+  title==="" ||
+  posterurl=== '' ||
+  trailerlink === '' ||
+  caption === '' || 
+  !imageUrl.length;
+
   return (
+    <div>
+      <Snackbar
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        open={open}
+        autoHideDuration={6000}
+        onClose={handleClose}
+        message="changes successfully uploaded"
+        action={
+          <div>
+            
+            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          </div>
+        }
+      />
     <div className='adminform'>
         <div style={{display:"flex",flexDirection:'column'}}><h1>Upload poster</h1>
         <input type="file" accept="image/*" onChange={readposter} />
@@ -101,7 +142,8 @@ setcaption(e.target.value)
        
         console.log(slideobject)
         }
-        <button onClick={()=>{save()}}>Save slide</button>
+        <button onClick={()=>{save()}} disabled={isInvalid}>Save slide</button>
+    </div>
     </div>
   );
 }

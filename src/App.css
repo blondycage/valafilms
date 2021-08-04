@@ -13,6 +13,9 @@ body{
   
   
 }
+.video-iframe{
+  width: 100vw;
+}
 .flexrow{
   display: flex;
 justify-content: center;
@@ -72,6 +75,8 @@ min-width: 70vw;
   font-size: 40px;
   text-align: center;
    margin: auto;
+   font-family: 'Courier New', Courier, monospace;
+   color: white;
 }
 .slidecontent{
   display: flex;
@@ -91,7 +96,7 @@ color :white;
   
 }
 .slidecontent h1,.slidecontent h2{
-  color: #ac7836;
+  color: #b5b35c;
   font-size: 40px;
   text-transform: uppercase;
   text-align: center;
@@ -294,8 +299,56 @@ align-items: center;
 }
 .rodalform *{
   margin-left: 20px;
-  width:70vw;
+  margin-top: 5px;
+  width:400px;
+font-family: 'Courier New', Courier, monospace;
+}
+.rodalform button{
+  background-color: olive;
+color: white;
+margin-top: 10px;
+width: 200px;
+}
+.video-background {
+  background: #000;
 
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -99;
+  
+}
+.video-background ::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0,0,0,0.75)
+}
+.vidcon iframe{
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.video-foreground,
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
 }
 .workers img {
   width: 200px;
@@ -398,7 +451,7 @@ opacity: 1;
 }
 .fa:hover {
     
-    color: #ac7836;
+    color: #b5b35c;
 }
 
 
@@ -426,7 +479,7 @@ opacity: 1;
   animation-timing-function: linear;
 }
 .nav-content-container h1:hover{
-  color: #ac7836;
+  color: #b5b35c;
   cursor: pointer;
 }
 
@@ -748,7 +801,7 @@ input{
   text-align: right;
 }
 .teamdesc h2{
-  color: #ac7836;
+  color: #b5b35c;
   margin: 0;
 }
 .teanrow{ 
@@ -767,7 +820,7 @@ input{
   justify-content: center;
 }
 .lk .fa{
-  color:#ac7836;
+  color:#b5b35c;
 }
 .lk h4{
   margin: 0;
@@ -777,7 +830,7 @@ input{
 background-color: black;
 }
 .hib{
-  background-color: #ac7836;
+  background-color: #b5b35c; 
   padding: 5px;
   cursor: pointer;
   width: fit-content;
@@ -925,7 +978,7 @@ color :white;
 
 }
 .slidecontent h1,.slidecontent h2{
-  color: #ac7836;
+  color: #b5b35c;
   font-size: 25px;
   text-transform: uppercase;
   text-align: center;
@@ -951,4 +1004,36 @@ color :white;
 .radar img{
   max-width: 80px;
 }
+}
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+.slides {
+  position: relative;
+}
+.slides .slick-prev, .slides .slick-next {
+  position: absolute;
+  top: 50%;
+ color:#000000
+}
+.slides .slick-prev {
+  left: 5%;
+}
+.slides .slick-next {
+  right: 5%;
+}
+.slick-prev:before, .slick-next:before{
+  color: #000;
+}
+element {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+element::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }

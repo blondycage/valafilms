@@ -71,7 +71,8 @@ export default function Collab({vid}) {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 15000,
-    arrows:false
+    arrows:true,
+    className:'slides'
   };
   const settings2 = {
     dots: true,
