@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 export default function about () {
     return (
         <div className="aboutus ">
-          <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
+          <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',backgroundColor:"#050a05"}}>
           <div className="flexdivider">
 <div className="teamflex">
 <div className="teanrow">

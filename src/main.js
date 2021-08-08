@@ -72,23 +72,25 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1>V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal className="element" customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
-                    <div className="rodalform"><h4> CONTACT US @CONTACT.VALAFILMS.COM OR LEAVE US A MESSAGE </h4>
-                    <label htmlFor="txt">ENTER YOU EMAIL</label>  <input type="text" placeholder="email"/>
-                    <label htmlFor="txt">ENTER YOUR FULLNAME</label>
-                    <input type="text" placeholder="fullname"/>
-                    <label htmlFor="txt">-field (directing,acting,voice acting, cinematography, color grading, sound design,  Etc)</label>
-                    <textarea name="txt" id="" cols="30" rows="5"></textarea>
-                    <label htmlFor="txt">LINK TO PREVIOUS WORK</label>
-                    <input type="text" placeholder="previous work"/>
-                    <label htmlFor="txt">HOW DID YOU HEAR ABOUT US?</label>
-                    <textarea name="txt" id="" cols="30" rows="5"></textarea>
-                    <label htmlFor="txt">LEAVE US A COMMENT/MESSAGE</label>
-                    <textarea name="txt" id="" cols="30" rows="5"></textarea>
-                    
-                    <button>Submit</button>
-                    <br />
-                    </div>
+       <Rodal className="element" customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"#050a05",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+       <form>
+         <h4 style={{textAlign:"center"}}>CONTACT US @CONTACT.VAALAFILMS.COM OR LEAVE US A MESSAGE </h4>
+       <label for="name">ENTER NAME</label>
+  <input type="text" id="name" placeholder="Name" />
+  <label for="mail">ENTER EMAIL</label>
+  <input type="text" id="mail" placeholder="Mail" />
+  <label for="phone" id="phone">ENTER PHONE</label>
+  <input type="text" placeholder="Phone" />
+  <textarea placeholder="field (directing,acting,voice acting, cinematography, color grading, sound design, music 
+production/scoring, screenwriting, drone piloting, video editing, art directing, project 
+management, graphics, photography, animating, set design. Etc) "></textarea>
+ <label for="PW">LINK TO PREVIOUS WORK</label>
+  <input type="text" id="PW" placeholder="Name" />
+  <label for="HAS">HOW DID YOU HEAR ABOUT US</label>
+  <input type="text" id="HAS" placeholder="Name" />
+  <textarea placeholder="Your Message"></textarea>
+  <input type="submit" value="Send" />
+</form>
                 </Rodal>
                 </div>
       </div>

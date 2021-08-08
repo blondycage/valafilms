@@ -1,14 +1,13 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBJHAOhUyDRMxG_ou8GnhlBCz7F9Uy0n0o",
-    authDomain: "valafilms-b89ab.firebaseapp.com",
-    databaseURL: "https://valafilms-b89ab-default-rtdb.firebaseio.com",
-    projectId: "valafilms-b89ab",
-    storageBucket: "valafilms-b89ab.appspot.com",
-    messagingSenderId: "919566984294",
-    appId: "1:919566984294:web:22c9014d3332f7d00d39a7"
-  };
+  apiKey: "AIzaSyAxvjBnfzGD8zKDXhNzDNL1VYI5ZrrU3IY",
+  authDomain: "valafilms-e47d1.firebaseapp.com",
+  projectId: "valafilms-e47d1",
+  storageBucket: "valafilms-e47d1.appspot.com",
+  messagingSenderId: "428292675315",
+  appId: "1:428292675315:web:7d0e9038958b19c1b8c986"
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 

@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import logovid from "../files/logo2.mp4"
 import firebase from "./firebase"
 import YouTube from 'react-youtube';
+
 export default function Homepage({vid}) {
   const settings = {
    
