@@ -72,24 +72,18 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1>V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal className="element" customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"#050a05",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+       <Rodal className="element" customMaskStyles={{backgroundColor:'#050a05'}} customStyles={{backgroundColor:"#050a05",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
        <form>
-         <h4 style={{textAlign:"center"}}>CONTACT US @CONTACT.VAALAFILMS.COM OR LEAVE US A MESSAGE </h4>
-       <label for="name">ENTER NAME</label>
-  <input type="text" id="name" placeholder="Name" />
-  <label for="mail">ENTER EMAIL</label>
-  <input type="text" id="mail" placeholder="Mail" />
-  <label for="phone" id="phone">ENTER PHONE</label>
-  <input type="text" placeholder="Phone" />
-  <textarea placeholder="field (directing,acting,voice acting, cinematography, color grading, sound design, music 
-production/scoring, screenwriting, drone piloting, video editing, art directing, project 
-management, graphics, photography, animating, set design. Etc) "></textarea>
- <label for="PW">LINK TO PREVIOUS WORK</label>
-  <input type="text" id="PW" placeholder="Name" />
-  <label for="HAS">HOW DID YOU HEAR ABOUT US</label>
-  <input type="text" id="HAS" placeholder="Name" />
-  <textarea placeholder="Your Message"></textarea>
-  <input type="submit" value="Send" />
+  <input type="text" placeholder="NAME" />
+  <input type="text" placeholder="EMAIL ADDRESS" />
+  <input type="text" placeholder="PHONE" />
+  <textarea placeholder="YOUR FIELD(S) OF SPECIALIZATION
+
+(Directing, Acting, Voice Acting, Cinematography, Color Grading, Sound Design, Music Production/Scoring, Screenwriting, Drone piloting, Video Editing, Art Directing, Project Management, Graphics, Photography, Animating, Set Design, Etc.)"></textarea>
+  <input type="text" placeholder="LINK TO PREVIOUS WORK" />
+  <input type="text" placeholder="HOW DID YOU HEAR ABOUT US?" />
+  <textarea placeholder="YOUR MESSAGE"></textarea>
+  <input type="submit" value="SEND" />
 </form>
                 </Rodal>
                 </div>

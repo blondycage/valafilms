@@ -12,6 +12,7 @@
     "bootstrap": "^4.6.0",
     "device-detector-js": "^2.2.10",
     "firebase": "^8.4.1",
+    "font-awesome": "^4.7.0",
     "react": "^17.0.1",
     "react-animated-modal": "^1.1.1",
     "react-bootstrap": "^1.6.0",

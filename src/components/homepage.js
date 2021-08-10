@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import logovid from "../files/logo2.mp4"
 import firebase from "./firebase"
 import YouTube from 'react-youtube';
-
+import Scrollbutton from "./scrolltobottom"
 export default function Homepage({vid}) {
   const settings = {
    
@@ -123,6 +123,15 @@ export default function Homepage({vid}) {
      minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
      <source src={logovid} type="video/mp4"/>
    </video></div> }
+   
+
+
+
+
+
+
+   
+   <Scrollbutton/>
         </div>
     )
 }
