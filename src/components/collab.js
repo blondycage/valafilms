@@ -31,7 +31,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
-
+import Scrollbutton from "./scrolltobottom"
 
 
 import Rodal from 'rodal';
@@ -205,7 +205,8 @@ const classes = useStyles()
 <div className="vidwriteup">
   <h1 className="slideup">COLLABORATIONS  </h1>
 <h4>A list of projects we were a part of </h4> 
-
+<br />
+<button className="golden-btn big">Watch NOW</button>
 </div>
 
 </div>
@@ -276,6 +277,7 @@ const classes = useStyles()
      minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
      <source src={logovid} type="video/mp4"/>
    </video></div>}
+   <Scrollbutton/>
 </div>
        
     )

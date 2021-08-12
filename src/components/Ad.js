@@ -21,6 +21,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import logovid from "../files/logo2.mp4"
 import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
+import Scrollbutton from "./scrolltobottom"
 import Slider from "react-slick";
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -204,7 +205,8 @@ const classes = useStyles()
 <div className="vidwriteup">
   <h1 className="slideup">COMMERCIALS</h1>
 <h4> BY CHAVALA YADUMA</h4> 
-
+<br />
+<button className="golden-btn big">Watch NOW</button>
 </div>
 
 </div>
@@ -275,6 +277,7 @@ const classes = useStyles()
      minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
      <source src={logovid} type="video/mp4"/>
    </video></div>}
+   <Scrollbutton/>
 </div>
        
     )

@@ -32,7 +32,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 
-
+import Scrollbutton from "./scrolltobottom"
 
 import Rodal from 'rodal';
 import {useState,useEffect  } from "react";
@@ -83,6 +83,9 @@ export default function Projects({vid}) {
       color:"white",
       width:"30px",
       height:"30px"
+    },
+    button:{
+
     }
   });
   const settings = {
@@ -229,7 +232,8 @@ const classes = useStyles()
 <div className="vidwriteup">
   <h1 className="slideup">SHORT </h1>
 <h4>  FILMS BY CHAVALA YADUMA</h4> 
-
+<br />
+<button className="golden-btn big">Watch NOW</button>
 </div>
 
 </div>
@@ -241,8 +245,11 @@ const classes = useStyles()
       <div className="flexunder">
 <div className="content"> 
 <h2>{obj2[item].TITLE}</h2>
+<br />
 <p>{obj2[item].CAPTION}</p>
-<ColorButton className={"trailer"} variant="contained" color="secondary" onClick={()=>{setmodal(true)}}>Watch Trailer</ColorButton>
+<br />
+<button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
+<br />
 </div>
 <div className="poster">
   <img src={obj2[item].poster} alt=""/>
@@ -300,6 +307,8 @@ const classes = useStyles()
      minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
      <source src={logovid} type="video/mp4"/>
    </video></div>}
+    
+   <Scrollbutton/>
 </div>
        
     )

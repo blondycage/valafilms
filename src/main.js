@@ -103,6 +103,9 @@ const [showModal,setmodal]= useState(false)
       </div>
 
   <div className={styleCondition ? "nav" : "nav show"}>
+  <div style={{display:'flex',justifyContent:'center'}}> <p  className="gmail" >
+   info.valafilms@gmail.com
+</p></div>
     <div style={{display:'flex',justifyContent:'center'}}> <p className="cp-text">
     © Copyright 2021 Valafilms. All rights reserved.
 </p></div>
