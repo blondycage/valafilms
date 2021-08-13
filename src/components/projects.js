@@ -237,7 +237,18 @@ const classes = useStyles()
 </div>
 
 </div>
-
+<form >
+          <label>
+           CATEGORIES:
+            <select  >
+              <option value="all">ALL</option>
+              <option value="shorts">SHORT FILMS</option>
+              <option value="docs">DOCUMENTARIES</option>
+              <option value="full">FULL MOVIES</option>
+            </select>
+          </label>
+         
+        </form>
 <Slider {...settings}>
 { 
    !!obj2 && Object.keys(obj2).map((item, i) => (

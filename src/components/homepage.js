@@ -4,6 +4,7 @@ import logovid from "../files/logo2.mp4"
 import firebase from "./firebase"
 import YouTube from 'react-youtube';
 import Scrollbutton from "./scrolltobottom"
+import VideoThumbnail from 'react-video-thumbnail';
 export default function Homepage({vid}) {
   const settings = {
    
@@ -63,6 +64,7 @@ export default function Homepage({vid}) {
               <div className="vidcon ">
               <div className="">
         <div className="" id="myVideo">
+   
         <video autoPlay muted loop id="myVideo">
   <source src={`${link}`} type="video/mp4"/>
 </video>

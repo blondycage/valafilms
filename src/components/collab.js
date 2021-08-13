@@ -93,6 +93,7 @@ export default function Collab({vid}) {
 
   });
   const [open, setOpen] = React.useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('xl'));
 
@@ -105,6 +106,9 @@ export default function Collab({vid}) {
   };
 
   let images=[]
+  const onLoadedData = () => {
+    setIsVideoLoaded(true);
+  };
   const loadContent= ()=>{
     const todoRef = firebase.database().ref();
     todoRef.on('value', (snapshot) => {
@@ -112,6 +116,7 @@ export default function Collab({vid}) {
      console.log()
       setobj2(snapshot.val().collab.slides)
       setlink(snapshot.val().vala.settings.collab.landingvideo)
+      setthumblink(snapshot.val().vala.settings.collab.thumb)
 
 
     }); }
@@ -119,7 +124,9 @@ export default function Collab({vid}) {
     const [imgs,setimgs]= useState([])
    const[obj2,setobj2]=useState()
    const [link,setlink] = useState()
+   const [thumblink,setthumblink] = useState()
    const [imgarr,setarr] = useState([])
+   
   const ColorButton = withStyles((theme) => ({
     root: {
       color: theme.palette.getContrastText(teal[500]),
@@ -197,8 +204,13 @@ const classes = useStyles()
 
 
                  <div className="vidcon">
-                 
-      <video autoPlay muted loop id="myVideo">
+                 <img
+        src={thumblink}
+        className="video-thumb tiny"
+        alt="thumb"
+        style={{ opacity: isVideoLoaded ? 0 : 1 }}
+      />      
+      <video autoPlay muted loop id="myVideo" style={{ opacity: isVideoLoaded ? 1 : 0 }} onLoadedData={onLoadedData}>
   <source src={`${link}`} type="video/mp4"/>
 </video>
 <div className="video-overlay"></div>
