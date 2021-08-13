@@ -392,8 +392,9 @@ button[disabled]{
   justify-content: flex-end;
   margin-right: 90px;
   margin-top: 100px;
-  font-family: 'Oswald';
-  font-weight:500px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+
   color: white;
 }
 .cp-text{
@@ -476,8 +477,8 @@ opacity: 1;
  .nav-content-container>h1{
   margin: 2px;
   text-align: left;
-  font-family: 'Big Shoulders Display', cursive; -webkit-font-smoothing: antialiased;
-    font-size: 35px;
+  
+    font-size: 55px;
   text-transform: uppercase;
   transform-origin: bottom;
   transform: scaleY(0);
@@ -631,11 +632,11 @@ text-align: left;
   color: aqua;
 text-align: left;
 font-weight: bold;
-font-family:  'Abril Fatface', cursive;
+font-family:  'Oswald';
 
 }
 .vidwriteup h1{
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: 'Oswald';
   font-size: 45px;
 
 }
@@ -644,7 +645,7 @@ font-family:  'Abril Fatface', cursive;
   position: absolute;
   height: 9px;
   width: 50%;
-  background: #ffffff;
+  background: #9f7036;
   opacity: 1;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -912,7 +913,7 @@ background-color: black;
   justify-content: flex-end;
   /* margin-right: 90px; */
   margin-top: 50px;
-  font-family: 'Big Shoulders Display', cursive;
+
   color: white;
 }
 .navcontent{
@@ -920,7 +921,7 @@ background-color: black;
   
   margin-right: 90px;
   margin-top: 50px;
-  font-family: 'Big Shoulders Display', cursive;
+
   color: white;
   justify-content: flex-start;
 }
@@ -1353,4 +1354,8 @@ p,a,span{
 }
 .big{
   width: 300px;
+}
+.slideup h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
 }
