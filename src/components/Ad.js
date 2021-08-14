@@ -219,7 +219,7 @@ const classes = useStyles()
 <div className="content"> 
 <h2>{obj2[item].TITLE}</h2>
 <p>{obj2[item].CAPTION}</p>
-<ColorButton className={"trailer"} variant="contained" color="secondary" onClick={()=>{setmodal(true)}}>Watch Trailer</ColorButton>
+<button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
 </div>
 <div className="poster">
   <img src={obj2[item].poster} alt=""/>

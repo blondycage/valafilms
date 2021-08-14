@@ -16,6 +16,7 @@ import sf5 from "../files/sf5.jpeg"
 import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
 import sf8 from "../files/sf8.jpeg"
+import ScriptTag from 'react-script-tag';
 import logovid from "../files/logo2.mp4"
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -70,6 +71,7 @@ export default function Projects({vid}) {
   const [current,setcurrent]= useState("")
   const [currentitem,setcurrentitem]= useState()
   const [currentind,setcurrentind]= useState()
+  const [currenttag,setcurrenttag]= useState("all")
   const useStyles = makeStyles({
     root: {
      backgroundColor:"black",
@@ -159,6 +161,7 @@ export default function Projects({vid}) {
 
  
 useEffect(() => {
+  const script = document.createElement("script");    script.async = true;    script.src = "./scri.js"; 
   // Create an scoped async function in the hook
   async function anyNameFunction() {
     await loadContent();
@@ -238,38 +241,40 @@ const classes = useStyles()
 
 </div>
 <form >
-          <label>
-           CATEGORIES:
-            <select  >
-              <option value="all">ALL</option>
-              <option value="shorts">SHORT FILMS</option>
-              <option value="docs">DOCUMENTARIES</option>
-              <option value="full">FULL MOVIES</option>
-            </select>
-          </label>
+
+<select id="filter-films" placeholder-text="SHORTS" onChange={(e)=>{setcurrenttag(e.target.value)}}>
+<option value="all" className="select-dropdown__list-item">ALL</option>
+    <option value="short" className="select-dropdown__list-item">SHORTS</option>
+    <option value="fashion" className="select-dropdown__list-item">FASHION</option>
+    <option value="documentary" className="select-dropdown__list-item">DOCUMENTARIES</option>
+</select>
          
         </form>
 <Slider {...settings}>
 { 
    !!obj2 && Object.keys(obj2).map((item, i) => (
-      <div className="flexcol">
-      <div className="flexunder">
-<div className="content"> 
-<h2>{obj2[item].TITLE}</h2>
-<br />
-<p>{obj2[item].CAPTION}</p>
-<br />
-<button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
-<br />
-</div>
-<div className="poster">
-  <img src={obj2[item].poster} alt=""/>
-</div>
-</div>
-<div className="flexrow">
 
-<div className='fleximg' >
-{obj2[item].supprtingimages.map((imgurl, index) => (
+    (obj2[item].tag==currenttag || currenttag=="all")   &&
+<div className="flexcol">
+  <div className="flexunder">
+
+    <div className="content"> 
+
+      <h2>{obj2[item].TITLE}</h2>
+      <br />
+      <p>{obj2[item].CAPTION}</p>
+      <br />
+      <button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
+      <br />
+    </div>
+    <div className="poster">
+    <img src={obj2[item].poster} alt=""/>
+    </div>
+  </div>
+  <div className="flexrow">
+
+   <div className='fleximg' >
+     {obj2[item].supprtingimages.map((imgurl, index) => (
       <div>
      {console.log(item)}
       < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
@@ -282,7 +287,7 @@ const classes = useStyles()
 <br />
 
 
-     </div>
+      </div>
     ))
 
     }
@@ -290,16 +295,16 @@ const classes = useStyles()
     
 
 
-</div>
+   </div>
 
 
-</div>
+  </div>
 <Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0",zIndex:'6000'}} visible={showModal2} width={1000} height={1000} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
 
 
                 </Rodal>
 
-      </div>
+</div>
     ))
 
 }  
@@ -320,6 +325,7 @@ const classes = useStyles()
    </video></div>}
     
    <Scrollbutton/>
+  
 </div>
        
     )
