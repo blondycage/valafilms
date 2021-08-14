@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css');
 .App {
 }
 body{
@@ -77,7 +78,8 @@ min-width: 70vw;
   font-size: 40px;
   text-align: center;
    margin: auto;
-   font-family: 'Oswald';
+   font-family: 'Roboto';
+   font-weight: 300;
    color: #d2b584 ;
 }
 .slidecontent{
@@ -90,6 +92,8 @@ min-width: 70vw;
 max-width: 80%;
 font-size: 35px;
 color :white;
+font-family: "Roboto";
+font-weight: 300;
 
 }
 .pcontent div{
@@ -738,7 +742,7 @@ font-family:  'Oswald';
   width: 100vw;
   font-weight: 700;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-top: 30px;
 }
 
@@ -916,6 +920,7 @@ background-color: black;
 
   color: white;
 }
+
 .navcontent{
   display: flex;
   
@@ -1056,8 +1061,7 @@ element {
 element::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css');
+
 
 * {
   margin: 0;
@@ -1074,6 +1078,7 @@ body {
   color: #d2b584 ;
   background: url('https://codepen.io/images/classy_fabric.png') #050a05;
   -webkit-font-smoothing: antialiased;
+  font-weight: 300;
 }
 
 button,
@@ -1295,7 +1300,8 @@ input[type="submit"]:active {
 }
 h1,h2,h3,h4,h5{
   color: #9f7036;
-  font-family: "Roboto";
+  font-family: "Oswald";
+  font-weight: 500;
 }
 *:hover{
   color:#d2b584;
@@ -1356,6 +1362,16 @@ p,a,span{
   width: 300px;
 }
 .slideup h1{
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Oswald';
   font-size: 40px;
+}
+.valatext{
+  font-family: "Oswald";
+  font-weight: 300;
+  font-size: 40px;
+}
+.nav-content-container>h1{
+  font-family: "Oswald";
+  font-weight: 500;
+  font-size: 55px;
 }

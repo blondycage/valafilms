@@ -70,7 +70,7 @@ const [showModal,setmodal]= useState(false)
     <div className={`navcontainer ${visible}`}></div>
       <div className="homecon">
         <img src={logo} alt=""/>
-        <h1>V A L A F I L M S</h1>
+        <h1 className="valatext">V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
        <Rodal className="element" customMaskStyles={{backgroundColor:'#050a05'}} customStyles={{backgroundColor:"#050a05",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
        <form>
@@ -136,7 +136,7 @@ setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition
 <a href="#" className="fa fa-youtube"></a>
 <a href="#" className="fa fa-instagram"></a></div> 
 </div>
-<Link to="/admin" style={{color:'white'}}><h1 className={styleCondition3 ? "slidedown" : "slideup"}>Admin</h1></Link>
+
 
 
 
