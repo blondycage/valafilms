@@ -204,6 +204,7 @@ const classes = useStyles()
 
 
                  <div className="vidcon">
+                 <div className="video-overlay"></div>
                  <img
         src={thumblink}
         className="video-thumb tiny"
@@ -213,7 +214,7 @@ const classes = useStyles()
       <video autoPlay muted loop id="myVideo" style={{ opacity: isVideoLoaded ? 1 : 0 }} onLoadedData={onLoadedData}>
   <source src={`${link}`} type="video/mp4"/>
 </video>
-<div className="video-overlay"></div>
+
 <div className="vidwriteup">
   <h1 className="slideup">COLLABORATIONS  </h1>
 <h4>A list of projects we were a part of </h4> 
