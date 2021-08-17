@@ -73,7 +73,7 @@ export default function Homepage({vid}) {
 <div className="video-overlay"></div>
 <div className="vidwriteup">
   <h1 className="slideup">SHORTS,ADS,<br/>
-  CREATIVE VIDEOGRAPHY<br/>   </h1>
+  VIDEOGRAPHY<br/>   </h1>
 </div>
 </div> <br/>
 <br/>
@@ -134,6 +134,8 @@ export default function Homepage({vid}) {
 
    
    <Scrollbutton/>
+   <br />
+   <br />
         </div>
     )
 }

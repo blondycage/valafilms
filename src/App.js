@@ -1,7 +1,7 @@
 import logo from './files/Logo_Low.png';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css';
+
 import Vid from '../src/files/video.mp4'
 import Vid2 from '../src/files/vid.mp4'
 import Vid3 from '../src/files/ad2.mp4'
@@ -12,8 +12,8 @@ import Collabs from "../src/components/collab"
 import Admin from "../src/components/admin"
 import Ad from "../src/components/Ad"
 import Ab from "../src/main"
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+
+import './App.css';
 import rad from "../src/files/radar.png";
 import {
   BrowserRouter as Router,

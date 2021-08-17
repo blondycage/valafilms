@@ -17,6 +17,7 @@ import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
 import sf8 from "../files/sf8.jpeg"
 import ScriptTag from 'react-script-tag';
+import Slide from '@material-ui/core/Slide'
 import logovid from "../files/logo2.mp4"
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -41,18 +42,27 @@ import { teal, purple } from '@material-ui/core/colors';
 import firebase from "./firebase"
 import YoutubeEmbed from "./embed";
 
+import NavigateNextTwoToneIcon from '@material-ui/icons/NavigateNextTwoTone';
+import NavigateBeforeTwoToneIcon from '@material-ui/icons/NavigateBeforeTwoTone';
+
 
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const {  onClick } = props;
+  let className = props.type === "next" ? "nextArrow" : "prevArrow";
+  className += " arrow";
+  const char = props.type === "next" ? <NavigateNextTwoToneIcon/>: <NavigateNextTwoToneIcon/> ;
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "white",zIndex:'10000' }}
+     
       onClick={onClick}
     />
   );
 }
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
@@ -79,7 +89,11 @@ export default function Projects({vid}) {
     },
     bg:{
       backgroundColor:'black',
-      zIndex:8000
+      zIndex:8000,
+      display:"flex",
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center'
     },
     icon:{
       color:"white",
@@ -99,7 +113,7 @@ export default function Projects({vid}) {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 15000,
-    
+   
     className: 'slides'
     
   };
@@ -183,6 +197,7 @@ const classes = useStyles()
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
+        TransitionComponent={Transition}
        
       >
      <div style ={{display:'flex',backgroundColor:'black'}}>
@@ -192,13 +207,13 @@ const classes = useStyles()
           </div>
      
         <DialogContent  className={classes.bg}>
-        <div>
+        <div style={{maxWidth:"800px"}}>
        
         <Slider {...sett}>
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
-      <div>dd
+      <div>
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'500px',width:"500px",margin:'0 auto'}} key={index} />
 <br />
 
 
@@ -233,8 +248,8 @@ const classes = useStyles()
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">SHORT </h1>
-<h4>  FILMS BY CHAVALA YADUMA</h4> 
+  <h1 className="slideup">FILMS </h1>
+<h4 style={{color:"#d2b584"}}>  FILMS BY CHAVALA YADUMA</h4> 
 <br />
 <button className="golden-btn big">Watch NOW</button>
 </div>
@@ -250,7 +265,7 @@ const classes = useStyles()
 </select>
          
         </form>
-<Slider {...settings}>
+<Slider {...settings}  >
 { 
    !!obj2 && Object.keys(obj2).map((item, i) => (
 
@@ -275,16 +290,16 @@ const classes = useStyles()
 
    <div className='fleximg' >
      {obj2[item].supprtingimages.map((imgurl, index) => (
-      <div>
-     {console.log(item)}
-      < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
+      <div className="btn">
+     
+      < img src={`${imgurl.url}`} className="noselect" alt="hey" key={index} onClick={()=>{
       
         setsettings({...sett,initialSlide:index})
         setcurrentitem(item)
       handleClickOpen()
         
       }}/>
-<br />
+
 
 
       </div>
