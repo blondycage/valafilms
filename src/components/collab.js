@@ -16,6 +16,7 @@ import sf5 from "../files/sf5.jpeg"
 import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
 import sf8 from "../files/sf8.jpeg"
+import Slide from '@material-ui/core/Slide'
 import logovid from "../files/logo2.mp4"
 import Carousel from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
@@ -54,7 +55,10 @@ export default function Collab({vid}) {
     bg:{
       backgroundColor:'black',
       zIndex:8000,
-      width:"100vw"
+      display:"flex",
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center'
     },
     icon:{
       color:"white",
@@ -100,7 +104,9 @@ export default function Collab({vid}) {
   const handleClickOpen = () => {
     setOpen(true);
   };
-
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
   const handleClose = () => {
     setOpen(false);
   };
@@ -120,6 +126,7 @@ export default function Collab({vid}) {
 
 
     }); }
+   
     const [obj,setobj]= useState()
     const [imgs,setimgs]= useState([])
    const[obj2,setobj2]=useState()
@@ -160,6 +167,8 @@ const classes = useStyles()
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
+      
+       
        
       >
      <div style ={{display:'flex',backgroundColor:'black'}}>
@@ -168,14 +177,14 @@ const classes = useStyles()
           </IconButton>
           </div>
      
-        <DialogContent  className={classes.bg}>
-        <div>
+          <DialogContent  className={classes.bg}>
+        <div className="slideimg">
        
         <Slider {...sett}>
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
-      <div>dd
+      <div>
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" className="imgslide" key={index} />
 <br />
 
 
@@ -204,7 +213,7 @@ const classes = useStyles()
 
 
                  <div className="vidcon">
-                 <div className="video-overlay"></div>
+               
                  <img
         src={thumblink}
         className="video-thumb tiny"
@@ -217,7 +226,7 @@ const classes = useStyles()
 
 <div className="vidwriteup">
   <h1 className="slideup">COLLABORATIONS  </h1>
-<h4>A list of projects we were a part of </h4> 
+<h4 style= {{color:"#d2b584"}}>A list of projects we were a part of </h4> 
 <br />
 <button className="golden-btn big">Watch NOW</button>
 </div>
@@ -237,13 +246,13 @@ const classes = useStyles()
 <div className="poster">
   <img src={obj2[item].poster} alt=""/>
 </div>
-</div>
+</div> <br />
 <div className="flexrow">
 
 <div className='fleximg' >
 {obj2[item].supprtingimages.map((imgurl, index) => (
-      <div>
-     {console.log(item)}
+      <div className="btn">
+    
       < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
       
         setsettings({...sett,initialSlide:index})

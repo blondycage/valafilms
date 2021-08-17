@@ -70,7 +70,7 @@ export default function Homepage({vid}) {
 </video>
         </div>
       </div>
-<div className="video-overlay"></div>
+
 <div className="vidwriteup">
   <h1 className="slideup">SHORTS,ADS,<br/>
   VIDEOGRAPHY<br/>   </h1>
@@ -121,7 +121,7 @@ export default function Homepage({vid}) {
          
         </Slider>
         
-        </div>:<div style={{display:'flex',justifyContent:'center',alignItems:'center',paddingTop:'3%',
+        </div>:<div  className="moblepre" style={{display:'flex',justifyContent:'center',alignItems:'center',paddingTop:'3%',
      minWidth:'100vw',backgroundColor:'black'}} >   <video autoPlay muted loop id="loading"  style={{maxWidth:'35vw',zIndex:'4000'}}>
      <source src={logovid} type="video/mp4"/>
    </video></div> }

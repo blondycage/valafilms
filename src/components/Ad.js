@@ -15,6 +15,7 @@ import sf4 from "../files/sf4.jpeg"
 import sf5 from "../files/sf5.jpeg"
 import sf6 from "../files/sf6.jpeg"
 import sf7 from "../files/sf7.jpeg"
+import Slide from '@material-ui/core/Slide'
 import sf8 from "../files/sf8.jpeg"
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
@@ -54,7 +55,11 @@ export default function Ads({vid}) {
     },
     bg:{
       backgroundColor:'black',
-      zIndex:8000
+      zIndex:8000,
+      display:"flex",
+      flexDirection:'column',
+      justifyContent:'center',
+      alignItems:'center'
     },
     icon:{
       color:"white",
@@ -115,6 +120,9 @@ export default function Ads({vid}) {
 
 
     }); }
+    const Transition = React.forwardRef(function Transition(props, ref) {
+      return <Slide direction="up" ref={ref} {...props} />;
+    });
     const [obj,setobj]= useState()
     const [imgs,setimgs]= useState([])
    const[obj2,setobj2]=useState()
@@ -154,6 +162,7 @@ const classes = useStyles()
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"
        
+       
       >
      <div style ={{display:'flex',backgroundColor:'black'}}>
           <IconButton  onClick={handleClose} className={classes.icon}>
@@ -161,14 +170,14 @@ const classes = useStyles()
           </IconButton>
           </div>
      
-        <DialogContent  className={classes.bg}>
-        <div>
+          <DialogContent  className={classes.bg}>
+        <div className="slideimg">
        
         <Slider {...sett}>
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
-      <div>dd
+      <div>
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'100vw',width:"100vw",margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" className="imgslide" key={index} />
 <br />
 
 
@@ -204,7 +213,7 @@ const classes = useStyles()
 <div className="video-overlay"></div>
 <div className="vidwriteup">
   <h1 className="slideup">COMMERCIALS</h1>
-<h4> BY CHAVALA YADUMA</h4> 
+<h4 style= {{color:"#d2b584"}}> BY CHAVALA YADUMA</h4> 
 <br />
 <button className="golden-btn big">Watch NOW</button>
 </div>
@@ -229,8 +238,8 @@ const classes = useStyles()
 
 <div className='fleximg' >
 {obj2[item].supprtingimages.map((imgurl, index) => (
-      <div>
-     {console.log(item)}
+      <div  className="btn">
+  
       < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
       
         setsettings({...sett,initialSlide:index})

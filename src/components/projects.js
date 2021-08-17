@@ -207,13 +207,13 @@ const classes = useStyles()
           </div>
      
         <DialogContent  className={classes.bg}>
-        <div style={{maxWidth:"800px"}}>
+        <div className="slideimg">
        
         <Slider {...sett}>
         {!!obj2 && !!currentitem && obj2[currentitem].supprtingimages.map((imgurl, index) => (
       <div>
     
-      < img src={`${imgurl.url}`} alt="hey" style={{maxWidth:'500px',width:"500px",margin:'0 auto'}} key={index} />
+      < img src={`${imgurl.url}`} alt="hey" className="imgslide" key={index} />
 <br />
 
 

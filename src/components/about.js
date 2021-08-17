@@ -5,45 +5,76 @@ import img3 from "./Seun.jpg"
 import img4 from "./Saraya.jpg"
 import img5 from "./Chavala.jpg"
 import Button from '@material-ui/core/Button';
+import { Scrollbars } from 'react-custom-scrollbars';
 export default function about () {
-    return (
-        <div className="aboutus ">
-          <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',backgroundColor:"#050a05"}}>
-          <div className="flexdivider">
-<div className="teamflex">
-<div className="teanrow">
-  <div><img src={img5} alt=""  height='250px'/>
-  <div className="lk"><h4>Chavala Yaduma: <br /> creative director</h4></div><div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div></div>
-  <div><img src={img4} alt=""  height='250px'/>  <div className="lk"><h4>Saraya Yaduma: <br /> director/writer</h4></div><div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div>
-</div> 
-</div>
-<div className="teanrow">
-  <div><img src={img3} alt=""  height='250px'/>
- <div className="lk"><h4>Oluwaseun Oke: <br /> Videographer/editor</h4></div> <div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div></div>
-  <div><img src={img2} alt=""  height='250px'/> 
-<div className="lk"><h4>Boyett Truman: <br /> Project Manager/writer</h4></div><div className='lk'>  <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div>
-</div>  
-</div>
-</div>
-<div className="teamdesc">
   
-  <h2>OUR TEAM</h2>
-    <h1> amet, consectetur adipisicing elit. Aliquid error delectus repudiandae quasi voluptates omnis temporibus. Sapiente, dolor.</h1>
+    return (
+      <div className="teampage">
+<div className="teamtext">
+<h1>OUR TEAM</h1>
+<br />
+      <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate porro veritatis quos accusamus. Velit inventore recusandae labore aut tenetur earum corrupti praesentium, error accusamus dolores necessitatibus assumenda optio perspiciatis illo quod. Id ut excepturi blanditiis perspiciatis, similique voluptatem dolore velit aut corrupti! Recusandae nobis rerum rem voluptatibus ullam deleniti distinctio!</h3>
+<br />
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eligendi ipsa fugiat iusto consequatur ullam quidem quam nihil suscipit tempore odio cupiditate sunt est aliquid, voluptatem quae quas accusamus non vel inventore delectus aliquam? Error accusantium facere tempore commodi quasi quia tempora est magni repellendus natus excepturi nesciunt et eligendi amet consequuntur, nam eaque ducimus tenetur voluptatem. Dolore cum odio explicabo voluptates voluptate non corporis nam placeat sint cumque rem velit et, inventore, tenetur labore voluptas quae minus? Ex distinctio magnam doloremque reprehenderit, eaque minus rerum voluptatibus dolorem consequatur architecto natus soluta dolores doloribus ullam. Molestias, voluptatibus! Quis illo harum maxime dolor perferendis illum repellendus ipsam, minima repellat ad aliquam laboriosam ex distinctio laborum aperiam quia quibusdam ipsa eveniet totam vel reprehenderit error mollitia odio eius! Voluptatem, iste. Consequuntur, illum.</p>
 
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum necessitatibus quo aperiam adipisci labore debitis quidem, sapiente alias laborum sunt similique soluta odit aspernatur illum quasi ullam rerum minima fugit!Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis odit ipsam modi natus ea similique iure! Iure itaque asperiores saepe.</p>
+</div>
+        <div className="teammembers ">
+          <CustomScrollbars autoHide autoHideTimeout={500} autoHideDuration={200}>
+     <div className="teamcontent">
+     <img src={img5} alt="" width="300"  />
+     <h4>Chavala Yaduma: creative director</h4>
+    <div className="ics">
+    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div></div>
+    <br />
+     </div>
 
- 
-   </div>
-          </div>
-          </div>
-        </div>
+     <div className="teamcontent">
+     <img src={img4} alt="" width="300"  />
+     <h4>Saraya Yaduma: director/writer</h4>
+    <div className="ics">
+    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div></div>
+    <br />
+     </div>
+     <div className="teamcontent">
+     <img src={img3} alt="" width="300"  />
+     <h4>Oluwaseun Oke: Videographer/editor</h4>
+    <div className="ics">
+    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div></div>
+    <br />
+     </div>
+     <div className="teamcontent">
+     <img src={img2} alt="" width="300"  />
+     <h4>Boyett Truman: Project Manager/writer</h4>
+    <div className="ics">
+    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
+<a href="#" className="fa fa-twitter"></a>
+<a href="#" className="fa fa-google"></a></div></div>
+    <br />
+     </div>
+        
+      </CustomScrollbars>
+    </div>
+    </div>
     )
 }
+const renderThumb = ({ style, ...props }) => {
+  const thumbStyle = {
+    borderRadius: 6,
+    backgroundColor: '#9f7036'
+  };
+  return <div style={{ ...style, ...thumbStyle }} {...props} />;
+};
+
+const CustomScrollbars = props => (
+  <Scrollbars
+    renderThumbHorizontal={renderThumb}
+    renderThumbVertical={renderThumb}
+    {...props}
+  />
+);

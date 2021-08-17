@@ -408,9 +408,10 @@ button[disabled]{
 
   position: absolute;
   bottom:50px;
-  right:120px;
+ 
    color: rgba(255, 255, 255, 0.7); text-shadow: 0 1px rgba(255, 255, 255, 0.1);
    z-index:400;
+   text-align: left;
   }
   .cp-text2{
 
@@ -423,10 +424,8 @@ button[disabled]{
      
     }
     .gmail{
-      position: absolute;
-  bottom:80px;
-  right:120px;
-  columns: #d2b584 ;
+   
+  color: #d2b584 ;
     }
   .radar {
     animation: pulse 5s infinite ease-in-out;
@@ -820,9 +819,7 @@ input{
   
  
 }
-.sticky{
-  position: fixed;
-}
+
 .teamdesc *{
   text-align: right;
 }
@@ -863,175 +860,7 @@ background-color: black;
   border-radius: 12px;
 
 }
-@media only screen and (max-width: 768px) {
 
-.vidwriteup h1{
-  font-size: 25px;
-}
-.homecon img {
-  width: 30px;
-  margin-right: 5px;
-  left: 2px ;
-  padding:0;
-}
-
-
-.homecon {
-  position: fixed;
-  top: 20px;
-  left: 5px;
-  z-index: 1000;
-  color: white;
-  display: flex;
-  max-width: 400px;
-  height: 40px;
-  align-items: center;
-
-}
-.flexunder{
-  flex-direction: column;
-}
-.poster img {
-  max-width: 100%;
-  padding: 10px;
-
-}
-.content  {
-  width: 100vw;
-  /* margin-top: 80px; */
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
- 
-  text-align: justify;
-  z-index: 600;
-  max-width: calc(100vw-10px);
-  margin: 0;
-}
-.nav-content-container{
-  display: flex;
-  flex-direction: column;
-  color: white;
-
-}
-.navcontent {
-  display: flex;
-  justify-content: flex-end;
-  /* margin-right: 90px; */
-  margin-top: 50px;
-
-  color: white;
-}
-
-.navcontent{
-  display: flex;
-  
-  margin-right: 90px;
-  margin-top: 50px;
-
-  color: white;
-  justify-content: flex-start;
-}
-.aflex{
-  display: flex;
-  gap :2px;
-}
-.cp-text {
-  position: absolute;
-  bottom: 10px;
-  /* right: 50%; */
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 1px rgb(255 255 255 / 10%);
-  z-index: 400;
-  
- 
-  margin: auto;
-}
-.radar {
-  animation: pulse 3s infinite ease-in-out;
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  color: rgba(255, 255, 255, 0.7);
-  text-shadow: 0 1px rgb(255 255 255 / 10%);
-  z-index: 400;
-  /* align-self: center; */
-  /* margin: auto; */
-  margin-left: -50px;
-}
-.flexdivider{
-  flex-direction: column;
-}
-.teamdesc{
-  max-width: 500px;
-  margin: 0;
-
-
-  
- 
-}
-.teamdesc *{
-  text-align: center;
-}
-.aboutus{
-  margin: 0;
-  margin-top: 20px;
-  margin: 20px auto;
-}.teanrow {
-  display: flex;
-  /* grid-gap: 50px; */
-  gap: 50px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.hometext{
-  font-size: 30px;
-  text-align: justify;
-  
-}
-.slidecontent{
-  display: flex;
-  justify-content: center;
-  min-width: 100vw;
-  margin: auto;
- margin-right: 20px;
-  align-items: center;
-}
-.slidecontent p{
-width: 100%;
-font-size: 18px;
-color :white;
-
-}
-.slidecontent h1,.slidecontent h2{
-  color:  #9f7036;
-  font-size: 25px;
-  text-transform: uppercase;
-  text-align: center;
-  width: 80%;
-  margin: auto;
-}
-.wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 90vw;
-}
-#myVideo {
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 65vh;
-}.fa{
-
-  font-size: 20px;
-  padding: 10px;
-}
-.radar img{
-  max-width: 80px;
-}
-}
 @media (min-aspect-ratio: 16/9) {
   .video-foreground { height: 300%; top: -100%; }
 }
@@ -1347,9 +1176,7 @@ h1,h2,h3,h4,h5{
   font-family: "Oswald";
   font-weight: 500;
 }
-*:hover{
-  color:#d2b584;
-}
+
 p,a,span{
   color:#d2b584 ;
 }
@@ -1485,3 +1312,264 @@ p,a,span{
       justify-content:'center' !important;
       align-items:'center' !important;
 }
+.slideimg{
+  max-width: 800px;
+}
+.imgslide{
+  margin: 0 auto !important;
+  width: 500px !important;
+  max-width: 500px !important;}
+
+
+
+  .teammembers{
+    width:500px;
+    
+    
+    padding: 2px;
+   
+    min-height: 1000px;
+    
+    
+    color: white;
+  }
+
+  .teampage{
+    margin: 100px auto ;
+    margin-bottom: 0%;
+    display: flex;
+justify-content: center;
+
+max-width: 80vw;
+gap: 20px;
+  }
+  .teamtext{
+    width:500px;
+  
+  }
+  .teamcontent{
+display:'flex';
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+text-align: center;
+top: 0;
+
+  }
+  @media only screen and (max-width: 768px) {
+
+    .vidwriteup h1{
+      font-size: 25px;
+    }
+    .homecon img {
+      width: 30px;
+      margin-right: 5px;
+      left: 2px ;
+      padding:0;
+      display: none;
+    }
+    .slideimg{
+      max-width: 400px;
+    }
+    .imgslide{
+      margin: 0 auto !important;
+      width: 300px !important;
+      max-width: 300px !important;}
+    
+    
+    .homecon {
+      position: fixed;
+      top: 20px;
+      left: 5px;
+      z-index: 1000;
+      color: white;
+      display: flex;
+      max-width: 400px;
+      height: 40px;
+      align-items: center;
+    
+    }
+    .moblepre{
+
+      position: absolute; 
+      left: 0; 
+      top: 100px;
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
+      width: 300px; /* Need a specific value to work */
+    }
+    .flexunder{
+      flex-direction: column;
+    }
+    .poster img {
+      max-width: 100%;
+      padding: 10px;
+    
+    }
+    .nav-content-container>h1 {
+      font-size: 40px;
+    }
+    .content  {
+      width: 100vw;
+      /* margin-top: 80px; */
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+     
+      text-align: justify;
+      z-index: 600;
+      max-width: calc(100vw-10px);
+      margin: 0;
+    }
+    .nav-content-container{
+      display: flex;
+      flex-direction: column;
+     
+    
+    }
+    .navcontent {
+      display: flex;
+      justify-content: flex-end;
+      /* margin-right: 90px; */
+      margin-top: 50px;
+    
+     
+    }
+    
+    .navcontent{
+      display: flex;
+      
+      margin-right: 90px;
+      margin-top: 50px;
+    
+    
+      justify-content: flex-start;
+    }
+    .aflex{
+      display: flex;
+      gap :2px;
+    }
+    .cp-text {
+      position: absolute;
+      bottom: 10px;
+      /* right: 50%; */
+     
+      left: 0; 
+      right: 0; 
+      margin-left: auto; 
+      margin-right: auto; 
+      width: 300px; /* Need a specific value to work */
+      text-shadow: 0 1px rgb(255 255 255 / 10%);
+      z-index: 400;
+      text-align: center;
+     
+      margin: auto;
+    }
+    .radar {
+      animation: pulse 3s infinite ease-in-out;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      color: rgba(255, 255, 255, 0.7);
+      text-shadow: 0 1px rgb(255 255 255 / 10%);
+      z-index: 400;
+      /* align-self: center; */
+      /* margin: auto; */
+      margin-left: -50px;
+    }
+    .teampage{
+flex-wrap: wrap;
+
+
+    }
+    .flexdivider{
+      flex-direction: column;
+    }
+    .teamdesc{
+      max-width: 400px;
+      margin: 0;
+    
+    
+      
+     
+    }
+    .teamdesc *{
+      text-align: center;
+    }
+    .aboutus{
+      margin: 0;
+      margin-top: 20px;
+      margin: 20px auto;
+    }.teanrow {
+      display: flex;
+      /* grid-gap: 50px; */
+      gap: 50px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hometext{
+      font-size: 30px;
+      text-align: justify;
+      
+    }
+    .rodal-close {
+      position: absolute;
+      cursor: pointer;
+      top: 20px !important;
+      left: 16px !important;
+      width: 20px !important;
+      height: 20px !important;
+  }
+    .slidecontent{
+      display: flex;
+      justify-content: center;
+      min-width: 100vw;
+      margin: auto;
+     margin-right: 20px;
+      align-items: center;
+    }
+    .slidecontent p{
+    width: 100%;
+    font-size: 18px;
+   
+    
+    }
+    .slidecontent h1,.slidecontent h2{
+      color:  #9f7036;
+      font-size: 25px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 80%;
+      margin: auto;
+    }
+    .wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 90vw;
+    }
+    #myVideo {
+      right: 0;
+      bottom: 0;
+      width: 100vw;
+      height: 65vh;
+    }.fa{
+    
+      font-size: 20px;
+      padding: 10px;
+      color: #9f7036;
+    }
+    .radar img{
+      max-width: 60px;
+    }
+    input[type="text"],textarea {
+      width: 300px;
+
+    }
+    }
+    .fa:hover{
+      color: #a55d07;
+    }
