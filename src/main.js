@@ -101,7 +101,7 @@ const [showModal,setmodal]= useState(false)
   <input  type="text" placeholder="LINK TO PREVIOUS WORK" name="pw"/>
   <input required  type="text" placeholder="HOW DID YOU HEAR ABOUT US?" name="us" />
   <textarea placeholder="YOUR MESSAGE" name="message"></textarea>
-  <input type="submit" value="SEND" />
+  <input type="submit"   value="SEND" />
 </form>
                 </Rodal>
                 </div>
@@ -123,10 +123,11 @@ const [showModal,setmodal]= useState(false)
   <div className={styleCondition ? "nav" : "nav show"}>
 
     <div style={{display:'flex',justifyContent:'center',alignItems:"center"}}> <p className="cp-text">
-    © Copyright 2021 Valafilms. All rights reserved. <br />
     <div style={{display:'flex',justifyContent:'center'}}> <p  className="gmail" >
    info.valafilms@gmail.com
-</p></div>
+</p></div><br />
+    © Copyright 2021 Valafilms. All rights reserved. 
+    
 </p></div>
   
 

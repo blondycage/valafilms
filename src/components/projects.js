@@ -249,9 +249,9 @@ const classes = useStyles()
 <div className="video-overlay"></div>
 <div className="vidwriteup">
   <h1 className="slideup">FILMS </h1>
-<h4 style={{color:"#d2b584"}}>  FILMS BY CHAVALA YADUMA</h4> 
+<h4 style={{color:"#d2b584"}}> BY CHAVALA YADUMA</h4> 
 <br />
-<button className="golden-btn big">Watch NOW</button>
+<h4 className="baulf">Watch NOW</h4>
 </div>
 
 </div>
@@ -279,20 +279,22 @@ const classes = useStyles()
       <br />
       <p>{obj2[item].CAPTION}</p>
       <br />
-      <button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
+      <h1 className="baulf"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
       <br />
     </div>
     <div className="poster">
     <img src={obj2[item].poster} alt=""/>
     </div>
   </div>
+  <br/>
+  <br/>
   <div className="flexrow">
 
    <div className='fleximg' >
      {obj2[item].supprtingimages.map((imgurl, index) => (
-      <div className="btn">
+      <div className="">
      
-      < img src={`${imgurl.url}`} className="noselect" alt="hey" key={index} onClick={()=>{
+      < img src={`${imgurl.url}`} className="" alt="hey" key={index} onClick={()=>{
       
         setsettings({...sett,initialSlide:index})
         setcurrentitem(item)

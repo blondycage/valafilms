@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useWindowScroll } from "react-use";
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import ArrowDropDownCircleRoundedIcon from '@material-ui/icons/ArrowDropDownCircleRounded';
-const ScrollToTop = () => {
+import ArrowDownwardOutlinedIcon from '@material-ui/icons/ArrowDownwardOutlined';const ScrollToTop = () => {
     const { y: pageYOffset } = useWindowScroll();
     const [visible, setVisiblity] = useState(false);
 
@@ -25,7 +24,7 @@ const ScrollToTop = () => {
             className="scroll-to-top cursor-pointer text-center"
            
         >
-            <div className="icon"> <ArrowDropDownCircleRoundedIcon style={{ fontSize: 30 }} /></div>
+            <div className="icon"><p style={{color:'white'}}>scroll down</p><ArrowDownwardOutlinedIcon style={{ fontSize: 20 }} /></div>
            
         </div>
     );
