@@ -296,10 +296,13 @@ z-index: 600;
 
 }
 .baulf{
-  font-family: "BauLF-Medium";
+  font-family: "AK";
   color: #EEEEEE !important;
 }
-
+.baulf2{
+  font-family: "Akzidenz-Grotesk BQ";
+  color: #EEEEEE !important;
+}
 .hhh{
   text-align: center;
   text-transform: uppercase;
@@ -1084,6 +1087,20 @@ Border: 2px solid rgba(230,230,230,0.1)
   width: 100%;
   
 }
+.baulf2::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #9f7036;
+  transition: width .3s;
+  border-radius: 2px;
+}
+
+.baulf2:hover::after {
+  width: 100%;
+  
+}
 
 
 
@@ -1157,7 +1174,9 @@ Border: 2px solid rgba(230,230,230,0.1)
 .radio .sex {
   font: 20px fontawesome;
 }
-
+.mdf{
+  font-size: 20px;
+}
 input[type="submit"] {
   display: inline-block;
   width: 150px;
@@ -1621,4 +1640,39 @@ flex-wrap: wrap;
     }
     .newimage{
       margin: 10 auto;
+    }
+    #filter{
+      display: flex;
+      justify-content: space-evenly;
+      gap: 5px;
+      width: 80vw;
+      margin: 10px auto;
+    }
+    #filter p{
+      font-family: 'Akzidenz-Grotesk BQ';
+      font-size: 30px;
+      cursor: pointer;
+      color: #eeeeee;
+
+    }
+    #filter p:hover{
+      
+color: #9f7036;
+
+
+
+    }
+    #filter p::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 3px;
+      background: #9f7036;
+      transition: width .3s;
+      border-radius: 2px;
+    }
+    
+    #filter p:hover::after {
+      width: 100%;
+      
     }

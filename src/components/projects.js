@@ -146,6 +146,7 @@ export default function Projects({vid}) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
+    initialSlide:2
 
   });
   const [open, setOpen] = React.useState(false);
@@ -264,20 +265,20 @@ const classes = useStyles()
   <h1 className="slideup">FILMS </h1>
 <h4 style={{color:"#d2b584"}}> BY CHAVALA YADUMA</h4> 
 <br />
-<h4 className="baulf">Watch NOW</h4>
+<h4 className="baulf2 mdf">WATCH NOW</h4>
 </div>
 
 </div>
-<form >
 
-<select id="filter-films" placeholder-text="SHORTS" onChange={(e)=>{setcurrenttag(e.target.value)}}>
-<option value="all" className="select-dropdown__list-item">ALL</option>
-    <option value="short" className="select-dropdown__list-item">SHORTS</option>
-    <option value="fashion" className="select-dropdown__list-item">FASHION</option>
-    <option value="documentary" className="select-dropdown__list-item">DOCUMENTARIES</option>
-</select>
+
+<div id="filter" placeholder-text="SHORTS">
+<p onClick={()=>{setcurrenttag("all")}}>ALL</p>
+    <p onClick={()=>{setcurrenttag("short")}}>SHORTS</p>
+    <p onClick={()=>{setcurrenttag("fashion")}}>FASHION</p>
+    <p onClick={()=>{setcurrenttag("documentary")}}>DOCUMENTARIES</p>
+</div>
          
-        </form>
+        
 <Slider {...settings}  >
 { 
    !!obj2 && Object.keys(obj2).map((item, i) => (
@@ -292,7 +293,7 @@ const classes = useStyles()
       <br />
       <p>{obj2[item].CAPTION}</p>
       <br />
-      <h1 className="baulf"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
+      <h1 className="baulf2"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
       <br />
     </div>
     <div className="poster">
