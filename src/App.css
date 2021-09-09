@@ -3,6 +3,7 @@
 @import url('https://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css');
 @import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
 .App {
+  
 }
 body{
   background-color:#000000;
@@ -1397,13 +1398,16 @@ p,a,span{
   }
 
   .teampage{
-    margin: 100px auto ;
+    margin: 0px auto ;
     margin-bottom: 0%;
     display: flex;
 justify-content: center;
-
+max-height: 80vh;
 max-width: 80vw;
-gap: 20px;
+position: fixed;
+top: 100px;
+left: 10%;
+right:10%
   }
   .teamtext{
     width:500px;

@@ -6,9 +6,21 @@ import img4 from "./Saraya.jpg"
 import img5 from "./Chavala.jpg"
 import Button from '@material-ui/core/Button';
 import { Scrollbars } from 'react-custom-scrollbars';
-export default function about () {
-  
-    return (
+import InfiniteScroll from "react-infinite-scroll-component";
+
+export default function About () {
+  const [items,setitems]=React.useState([{"name":"Chavala Yaduma: creative director","img":img5},{"name":"Saraya Yaduma: director/writer","img":img4},{"name":"Oluwaseun Oke: Videographer/editor","img":img3},{"name":"Boyett Truman: Project Manager/writer","img":img2}])
+   const [hasMore,sethasmore]= React.useState(true)
+  const fetchMoreData = () => {
+    if (items.length >= 4) {
+      sethasmore(false );
+      return;
+    }
+    // a fake async api call like which sends
+    // 20 more records in .5 secs
+   
+  };
+  return (
       <div className="teampage">
 <div className="teamtext">
 <h1>OUR TEAM</h1>
@@ -19,46 +31,34 @@ export default function about () {
 
 </div>
         <div className="teammembers ">
-          <CustomScrollbars autoHide autoHideTimeout={500} autoHideDuration={200}>
-     <div className="teamcontent">
-     <img src={img5} alt="" width="300"  />
-     <h4>Chavala Yaduma: creative director</h4>
-    <div className="ics">
-    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div></div>
-    <br />
-     </div>
+        <InfiniteScroll
+          dataLength={items.length}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={<h4>Loading...</h4>}
+          height={500}
+          endMessage={
+            <p style={{ textAlign: "center" }}>
+              <b>Yay! You have seen it all</b>
+            </p>
+          }
+        >
+          {items.map((i, index) => (
+            <div className="teamcontent">
+            <img src={items[index].img} alt="" width="300"  />
+            <h4>{items[index].name}</h4>
+           <div className="ics">
+           <div className='lk'> <a href="#" className="fa fa-facebook"></a>
+       <a href="#" className="fa fa-twitter"></a>
+       <a href="#" className="fa fa-google"></a></div></div>
+           <br />
+            </div>
+          ))}
+        </InfiniteScroll>
+    
 
-     <div className="teamcontent">
-     <img src={img4} alt="" width="300"  />
-     <h4>Saraya Yaduma: director/writer</h4>
-    <div className="ics">
-    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div></div>
-    <br />
-     </div>
-     <div className="teamcontent">
-     <img src={img3} alt="" width="300"  />
-     <h4>Oluwaseun Oke: Videographer/editor</h4>
-    <div className="ics">
-    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div></div>
-    <br />
-     </div>
-     <div className="teamcontent">
-     <img src={img2} alt="" width="300"  />
-     <h4>Boyett Truman: Project Manager/writer</h4>
-    <div className="ics">
-    <div className='lk'> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a></div></div>
-    <br />
-     </div>
-        
-      </CustomScrollbars>
+     
+     
     </div>
     </div>
     )
