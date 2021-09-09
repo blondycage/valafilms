@@ -35,6 +35,7 @@ border-radius: 2px;
   max-height: 450px;
  
   margin: auto;
+  
 }
 .flexunder{
   display: flex;
@@ -577,7 +578,7 @@ opacity: 1;
 }
 .content{
   width: 100vw;
-  margin-top: 80px;
+  margin-top: 30px;
   color:white;
   display: flex;
   flex-direction: column;

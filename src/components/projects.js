@@ -295,16 +295,7 @@ const classes = useStyles()
       <br />
       <h1 className="baulf2"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
       <br />
-    </div>
-    <div className="poster">
-    <img src={obj2[item].poster} alt=""/>
-    </div>
-  </div>
-  <br/>
-  <br/>
-  
-
-   <div className='' >
+      <div className='' >
    <Slider {...settings3}>
      {obj2[item].supprtingimages.map((imgurl, index) => (
       <div className="newimage">
@@ -331,6 +322,16 @@ const classes = useStyles()
 
 
   </div>
+    </div>
+    <div className="poster">
+    <img src={obj2[item].poster} alt=""/>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  
+
+   
 <Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0",zIndex:'6000'}} visible={showModal2} width={1000} height={1000} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
 
 
