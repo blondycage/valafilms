@@ -126,6 +126,19 @@ export default function Projects({vid}) {
     autoplay: false,
 
   };
+  const settings3 = {
+    dots: true,
+    fade: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed:3500,
+    arrows:false,
+
+  };
+
   const [sett,setsettings]=React.useState({
     dots: true,
     infinite: true,
@@ -288,11 +301,12 @@ const classes = useStyles()
   </div>
   <br/>
   <br/>
-  <div className="flexrow">
+  
 
-   <div className='fleximg' >
+   <div className='' >
+   <Slider {...settings3}>
      {obj2[item].supprtingimages.map((imgurl, index) => (
-      <div className="">
+      <div className="newimage">
      
       < img src={`${imgurl.url}`} className="" alt="hey" key={index} onClick={()=>{
       
@@ -308,11 +322,11 @@ const classes = useStyles()
     ))
 
     }
-
+</Slider>
     
 
 
-   </div>
+   
 
 
   </div>

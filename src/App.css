@@ -1615,3 +1615,10 @@ flex-wrap: wrap;
     .fa:hover{
       color: #a55d07;
     }
+    .newimage img{
+      max-width: 500px;
+      margin: auto;
+    }
+    .newimage{
+      margin: 10 auto;
+    }
