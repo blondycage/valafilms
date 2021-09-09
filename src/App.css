@@ -53,9 +53,9 @@ border-radius: 2px;
 .fleximg img{
   
   
-  max-height: 80px;
-  height: 80px;
-  min-height: 80px;
+  max-height: 150px;
+  height: 150px;
+  min-height: 150px;
   cursor: pointer;
   
 }
@@ -64,11 +64,13 @@ border-radius: 2px;
   text-align: center;
   z-index: 600;
   
+
   top:50%;
   left:50%;
-  margin-left: -234px;
+  margin-left: -100px;
   top: 50%;
-  margin-top: -25px;
+  margin-top: -100px;
+  opacity: 0.5;
 }
 .lg{
   font-family: 'Poller One', cursive !important;
@@ -504,7 +506,7 @@ opacity: 1;
  .nav-content-container>h1{
   margin: 2px;
   text-align: left;
-  
+  color: white;
     font-size: 55px;
   text-transform: uppercase;
   transform-origin: bottom;
@@ -518,7 +520,7 @@ opacity: 1;
   animation-timing-function: linear;
 }
 .nav-content-container h1:hover{
-  color:  #EEEEEE ;
+  color:  #9f7036 ;
   cursor: pointer;
 }
 

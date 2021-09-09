@@ -5,6 +5,7 @@ import firebase from "./firebase"
 import YouTube from 'react-youtube';
 import Scrollbutton from "./scrolltobottom"
 import VideoThumbnail from 'react-video-thumbnail';
+import Logo from '../files/Logo_Low.png';
 export default function Homepage({vid}) {
   const settings = {
    
@@ -62,7 +63,7 @@ export default function Homepage({vid}) {
     
         <div>
               <div className="vidcon ">
-                <div className="middle"> <h1 className="lg">V A L A F I L M S</h1></div>
+                 <img  className="middle" width="200px" src={Logo}/>
               <div className="">
                 
         <div className="" id="myVideo">
