@@ -120,7 +120,7 @@ export default function Projects({vid}) {
   const settings2 = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: false,
@@ -142,7 +142,7 @@ export default function Projects({vid}) {
   const [sett,setsettings]=React.useState({
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
@@ -263,7 +263,7 @@ const classes = useStyles()
 <div className="video-overlay"></div>
 <div className="vidwriteup">
   <h1 className="slideup">FILMS </h1>
-<h4 style={{color:"#d2b584"}}> BY CHAVALA YADUMA</h4> 
+<h2> BY CHAVALA YADUMA</h2> 
 <br />
 <h4 className="baulf2 mdf">WATCH NOW</h4>
 </div>
@@ -304,8 +304,8 @@ const classes = useStyles()
       
         setsettings({...sett,initialSlide:index})
         setcurrentitem(item)
-      handleClickOpen()
-        
+        // handleClickOpen()
+        // Bobs: I took it out for now because it seems like we don't need it again. 
       }}/>
 
 

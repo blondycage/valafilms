@@ -90,14 +90,12 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1 className="valatext">V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal className="element" customMaskStyles={{backgroundColor:'#050a05'}} customStyles={{backgroundColor:"#050a05",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+       <Rodal className="element" customMaskStyles={{backgroundColor:'#010101'}} customStyles={{backgroundColor:"#010101",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
        <form  onSubmit={sendEmail}>
   <input type="text" placeholder="NAME" name="name" required />
   <input type="text" placeholder="EMAIL ADDRESS" name="email" required   />
   <input type="text" placeholder="PHONE" name="phone" required />
-  <textarea required  placeholder="YOUR FIELD(S) OF SPECIALIZATION 
-
-(Directing, Acting, Voice Acting, Cinematography, Color Grading, Sound Design, Music Production/Scoring, Screenwriting, Drone piloting, Video Editing, Art Directing, Project Management, Graphics, Photography, Animating, Set Design, Etc.)" name="field"></textarea>
+  <textarea required  placeholder="YOUR FIELD(S) OF SPECIALIZATION&#13;&#10;(Directing, Acting, Voice Acting, Cinematography, Color Grading, Sound Design, Music Production/Scoring, Screenwriting, Drone piloting, Video Editing, Art Directing, Project Management, Graphics, Photography, Animating, Set Design, Etc.)" name="field"></textarea>
   <input  type="text" placeholder="LINK TO PREVIOUS WORK" name="pw"/>
   <input required  type="text" placeholder="HOW DID YOU HEAR ABOUT US?" name="us" />
   <textarea placeholder="YOUR MESSAGE" name="message"></textarea>
@@ -117,16 +115,15 @@ const [showModal,setmodal]= useState(false)
   <span ></span>
   <span></span>
 
-+
       </div>
 
   <div className={styleCondition ? "nav" : "nav show"}>
 
     <div style={{display:'flex',justifyContent:'center',alignItems:"center"}}> <p className="cp-text">
     <div style={{display:'flex',justifyContent:'center'}}> <p  className="gmail" >
-   info.valafilms@gmail.com
+   SEND US AN EMAIL: INFO.VALAFILMS@GMAIL.COM
 </p></div><br />
-    © Copyright 2021 Valafilms. All rights reserved. 
+    © COPYRIGHT 2021 VALAFILMS. ALL RIGHTS RESERVED. 
     
 </p></div>
   
