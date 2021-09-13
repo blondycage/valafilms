@@ -12,17 +12,22 @@ import Collabs from "../src/components/collab"
 import Admin from "../src/components/admin"
 import Ad from "../src/components/Ad"
 import Ab from "../src/main"
+import Login from "../src/components/login"
 
 import './App.css';
 import rad from "../src/files/radar.png";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
 import { useWindowScroll } from "react-use";
+import { BrowserRouter as Router, Route, Link, Switch, Redirect, BrowserRouter} from "react-router-dom";
+import firebase from "firebase";
+
+
 function App() {
+  const [authentication, setAuthState] = useState({
+    authenticated: false, //whether the user is allowed to access the protected routes
+    initialized: true //if firebase is still being nitalized
+  });
+  
+  
   const { y: pageYOffset } = useWindowScroll();
  const [styleCondition,setstyle]=useState(true);
  const [styleCondition2,setstyle2]=useState(true);
@@ -30,24 +35,50 @@ function App() {
  const [visible, setVisiblity] = useState("");
 const[view,setview]=useState('home');
 
- 
-
-  return (
-    <div >
-       <Router>
-         <Switch>
-         <Route path="/" exact component={Ab}/>
-       <Route path="/admin" component={Admin}/>
-
-           
-        
-
-         
-  </Switch>
-       
-  </Router>
-    </div>
-  );
+React.useEffect(()=>firebase.auth().onAuthStateChanged(user => {
+  if (user) { //the user has been logged in
+    setAuthState({
+        authenticated: true, //the user is now authenticated
+        initialized: false
+      });
+  } else { //the user has been logged out
+    setAuthState({
+      authenticated: false, //the user is no longer authenticated
+      initialized: false
+    });
+  }
+}), [setAuthState]);
+if (authentication.initialized) { //if firebase is still being initialized, return a Loading component
+  return <div>loading....</div>
 }
 
+return (
+
+    
+      <Router>
+        <Switch>
+        <Route path="/" exact component={Ab}/>
+        <Route path="/login" exact component={Login}/>
+      
+        <PrivateRoute path= {"/admin"} component={(Admin)} authenticated={authentication.authenticated}/> //this is a dashboard page that only signed in users can access
+            
+     
+             </Switch>
+      </Router>
+    
+);
+
+  
+}
+
+const PrivateRoute = ({ component: Component, authenticated: authenticated, ...rest }) => (
+  <Route {...rest} render=
+  {props => authenticated
+    ?
+    (<Component {...props} />)
+    :
+    (<Redirect to={{ pathname: "/login" }} /> )
+  }
+  />
+);
 export default App;
