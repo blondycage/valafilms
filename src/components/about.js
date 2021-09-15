@@ -7,12 +7,15 @@ import img5 from "./Chavala.jpg"
 import Button from '@material-ui/core/Button';
 import { Scrollbars } from 'react-custom-scrollbars';
 import InfiniteScroll from "react-infinite-scroll-component";
+import firebase from './firebase'
 
 export default function About () {
-  const [items,setitems]=React.useState([{"name":"Chavala Yaduma: creative director","img":img5},{"name":"Saraya Yaduma: director/writer","img":img4},{"name":"Oluwaseun Oke: Videographer/editor","img":img3},{"name":"Boyett Truman: Project Manager/writer","img":img2}])
+  const [items,setitems]=React.useState()
    const [hasMore,sethasmore]= React.useState(true)
+   const [count,setcount]= React.useState(0)
   const fetchMoreData = () => {
-    if (items.length >= 4) {
+    setcount(count++)
+    if (count >= 4) {
       sethasmore(false );
       return;
     }
@@ -20,6 +23,25 @@ export default function About () {
     // 20 more records in .5 secs
    
   };
+  const loadContent = () => {
+    const todoRef = firebase.database().ref('/teammembers');
+    todoRef.on('value', (snapshot) => {
+      setitems(snapshot.val())
+    console.log(snapshot.val())
+
+    });
+  }
+
+  React.useEffect(() => {
+    // Create an scoped async function in the hook
+    async function anyNameFunction() {
+      await loadContent();
+    }
+    // Execute the created function directly
+    anyNameFunction();
+    
+
+  }, []);
   return (
       <div className="teampage">
 <div className="teamtext">
@@ -32,7 +54,7 @@ export default function About () {
 </div>
         <div className="teammembers ">
         <InfiniteScroll
-          dataLength={items.length}
+          dataLength={4}
           next={fetchMoreData}
           hasMore={hasMore}
           loader={<h4>Loading...</h4>}
@@ -43,10 +65,10 @@ export default function About () {
             </p>
           }
         >
-          {items.map((i, index) => (
+         {!!items && Object.keys(items).reverse().map((member, index) => (
             <div className="teamcontent">
-            <img src={items[index].img} alt="" width="300"  />
-            <h4>{items[index].name}</h4>
+            <img src={items[member].imageUrl} alt="" width="300"  />
+            <h4>{`${items[member].name} : ${items[member].role} `}</h4>
            <div className="ics">
            <div className='lk'> <a href="#" className="fa fa-facebook"></a>
        <a href="#" className="fa fa-twitter"></a>

@@ -4,6 +4,7 @@ import Upload from "./upload"
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import Addteam from './addteam'
 
 export default function Admin() {
 
@@ -17,6 +18,7 @@ export default function Admin() {
    const[adsettings,setads]=useState(false)
    const[collabsettings,setcollabs]=useState(false)
    const [open, setOpen] = useState(false);
+   const[membersettings,setmembers]=useState(false)
 
   const handleClick = () => {
     setOpen(true);
@@ -54,7 +56,7 @@ export default function Admin() {
             <h1 style={{color:"white",textAlign:"center"}}>welcome admin</h1>
             <h3 onClick={()=>{window.location.href="/"}}className="hib">Back to Home</h3>
             <div className="adcon">
-                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(true);setcollabs(false)}} className="hib">SHOW HOMEPAGE SETTINGS</h3>
+                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(true);setcollabs(false);setmembers(false)}} className="hib">SHOW HOMEPAGE SETTINGS</h3>
               {homesettings &&  <div className="set">
                     <form action="">
                     <label htmlFor="p1">videolink</label>
@@ -73,7 +75,9 @@ firebase.database().ref('/vala/settings/homepage/landingvideo').set(home).then((
                     </form>
                    
                 </div>}
-                <h3 onClick={()=>{setfilms(true);setads(false);sethomes(false);setcollabs(false)}}className="hib">SHOW FILM PAGE SETTINGS</h3>
+                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(false);setcollabs(false);setmembers(true)}} className="hib">SHOW TEAM-MEMBERS SETTINGS</h3>
+              {membersettings && <Addteam/> }
+                <h3 onClick={()=>{setfilms(true);setads(false);sethomes(false);setcollabs(false);setmembers(false)}}className="hib">SHOW FILM PAGE SETTINGS</h3>
               { filmsettings && <div className="set">
                     <div>
                     <form action="">
@@ -101,7 +105,7 @@ firebase.database().ref('/vala/settings/film/landingvideo').set(film).then(()=>{
                     </div>
                    
                 </div>}
-                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(false);setcollabs(true)}}className="hib">SHOW COLLAB PAGE SETTINGS</h3>
+                <h3 onClick={()=>{setfilms(false);setads(false);sethomes(false);setcollabs(true);setmembers(false)}}className="hib">SHOW COLLAB PAGE SETTINGS</h3>
                 { collabsettings &&<div className="set">
                     <div>
                     <form action="">
@@ -129,7 +133,7 @@ firebase.database().ref('/vala/settings/collab/landingvideo').set(collab).then((
                     </div>
                    
                 </div>}
-                <h3 onClick={()=>{setfilms(false);setads(true);sethomes(false);setcollabs(false)}}className="hib">SHOW AD PAGE SETTINGS</h3>
+                <h3 onClick={()=>{setfilms(false);setads(true);sethomes(false);setcollabs(false);setmembers(false)}}className="hib">SHOW AD PAGE SETTINGS</h3>
                 {adsettings && <div className="set">
                     <div>
                     <form action="">
