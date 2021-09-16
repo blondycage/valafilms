@@ -20,6 +20,10 @@ export default function Homepage({ vid }) {
 
 
 
+  }
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const onLoadedData = () => {
+    setIsVideoLoaded(true);
   };
   const _onReady = (event) => {
     // access to player in all event handlers via event.target
@@ -39,11 +43,14 @@ export default function Homepage({ vid }) {
     }
   };
   const [link, setlink] = useState()
-
+  const [thumblink,setthumblink] = useState()
+  
   const loadContent = () => {
-    const todoRef = firebase.database().ref('/vala/settings/homepage/landingvideo');
+    const todoRef = firebase.database().ref();
     todoRef.on('value', (snapshot) => {
-      setlink(snapshot.val())
+     
+      setlink(snapshot.val().vala.settings.homepage.landingvideo)
+      setthumblink(snapshot.val().vala.settings.homepage.thumb)
       console.log(link)
 
     });
@@ -64,11 +71,17 @@ export default function Homepage({ vid }) {
 
       <div>
         <div className="vidcon ">
+        <img
+        src={thumblink}
+        className="video-thumb tiny"
+        alt="thumb"
+        style={{ opacity: isVideoLoaded ? 0 : 1 }}
+      />      
           <img className="middle" width="200px" src={Logo} />
           <div className="">
 
             <div className="" id="myVideo">
-              <video autoPlay muted loop id="myVideo">
+              <video autoPlay muted loop id="myVideo" style={{ opacity: isVideoLoaded ? 1 : 0 }} onLoadedData={onLoadedData}>
                 <source src={`${link}`} type="video/mp4" />
               </video>
             </div>

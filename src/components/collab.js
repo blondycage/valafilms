@@ -67,7 +67,7 @@ export default function Collab({vid}) {
     }
   });
   const settings = {
-    dots: true,
+    
     infinite: true,
  
     slidesToShow: 1,
@@ -75,9 +75,23 @@ export default function Collab({vid}) {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 15000,
-    arrows:true,
-    className:'slides'
+   
+    className: 'slides'
+    
   };
+  const settings3 = {
+    dots: true,
+    fade: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed:3500,
+    arrows:false,
+
+  };
+
   const settings2 = {
     dots: true,
     infinite: true,
@@ -228,7 +242,7 @@ const classes = useStyles()
   <h1 className="slideup">COLLABORATIONS  </h1>
 <h4 style= {{color:"#d2b584"}}>A list of projects we were a part of </h4> 
 <br />
-<button className="golden-btn big">Watch NOW</button>
+<h1 className="baulf2 big">Watch NOW</h1>
 </div>
 
 </div>
@@ -241,40 +255,37 @@ const classes = useStyles()
 <div className="content"> 
 <h2>{obj2[item].TITLE}</h2>
 <p>{obj2[item].CAPTION}</p>
-<button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
+<h1 className="baulf2" style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
+<br/>
+<div className='' >
+   <Slider {...settings3}>
+     {obj2[item].supprtingimages.map((imgurl, index) => (
+      <div className="newimage">
+     
+      < img src={`${imgurl.url}`} className="" alt="hey" key={index} onClick={()=>{
+      
+        setsettings({...sett,initialSlide:index})
+        setcurrentitem(item)
+        // handleClickOpen()
+        // Bobs: I took it out for now because it seems like we don't need it again. 
+      }}/>
+
+
+
+      </div>
+    ))
+
+    }
+</Slider>
+
+
+</div>
 </div>
 <div className="poster">
   <img src={obj2[item].poster} alt=""/>
 </div>
 </div> <br />
-<div className="flexrow">
 
-<div className='fleximg' >
-{obj2[item].supprtingimages.map((imgurl, index) => (
-      <div className="btn">
-    
-      < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
-      
-        setsettings({...sett,initialSlide:index})
-        setcurrentitem(item)
-      handleClickOpen()
-        
-      }}/>
-<br />
-
-
-     </div>
-    ))
-
-    }
-
-    
-
-
-</div>
-
-
-</div>
 <Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0",zIndex:'6000'}} visible={showModal2} width={1000} height={1000} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
 
 

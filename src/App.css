@@ -1132,9 +1132,10 @@ textarea:hover {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  
+  width: 100vw;
   transition: opacity 400ms ease 0ms;
+  max-height: 100vh;
 }
 .tiny {
   filter: blur(20px);
@@ -1673,10 +1674,14 @@ flex-wrap: wrap;
 
     }
     }
+.newimage2 img{
+max-height: 350px;
 
+}
     .newimage img{
       max-width: 520px;
       margin: 0px auto auto 0px;
+      max-height: 400px;
     }
     .newimage{
       margin: 0px auto auto 0px;

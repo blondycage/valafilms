@@ -68,16 +68,17 @@ export default function Ads({vid}) {
     }
   });
   const settings = {
-    dots: true,
+    
     infinite: true,
  
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 2000,
-    autoplaySpeed: 10000,
-    arrow:true
-    
+    autoplaySpeed: 15000,
+   
+    className: 'slides',
+    dots:false
   };
   const settings2 = {
     dots: true,
@@ -86,6 +87,18 @@ export default function Ads({vid}) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: false,
+
+  };
+  const settings3 = {
+   
+    fade: true,
+    infinite: true,
+    speed: 1500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed:3500,
+    arrows:false,
 
   };
   const [sett,setsettings]=React.useState({
@@ -215,7 +228,7 @@ const classes = useStyles()
   <h1 className="slideup">COMMERCIALS</h1>
 <h4 style= {{color:"#d2b584"}}> BY CHAVALA YADUMA</h4> 
 <br />
-<button className="golden-btn big">Watch NOW</button>
+<h1 className="baulf2 ">Watch NOW</h1>
 </div>
 
 </div>
@@ -228,23 +241,17 @@ const classes = useStyles()
 <div className="content"> 
 <h2>{obj2[item].TITLE}</h2>
 <p>{obj2[item].CAPTION}</p>
-<button className="golden-btn"   onClick={()=>{setmodal(true)}}>Watch Trailer</button>
-</div>
-<div className="poster">
-  <img src={obj2[item].poster} alt=""/>
-</div>
-</div>
-<div className="flexrow">
-
-<div className='fleximg' >
+<h1 className="baulf2"  style={{width:'fit-content'}} onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
+<div className='' >
+<Slider {...settings3}>
 {obj2[item].supprtingimages.map((imgurl, index) => (
-      <div  className="btn">
+      <div  className="newimage">
   
       < img src={`${imgurl.url}`} alt="hey" key={index} onClick={()=>{
       
-        setsettings({...sett,initialSlide:index})
-        setcurrentitem(item)
-      handleClickOpen()
+       // setsettings({...sett,initialSlide:index})
+      //  setcurrentitem(item)
+      //handleClickOpen()
         
       }}/>
 <br />
@@ -255,13 +262,17 @@ const classes = useStyles()
 
     }
 
-    
+</Slider>
 
 
 </div>
 
-
 </div>
+<div className="poster">
+  <img src={obj2[item].poster} alt=""/>
+</div>
+</div>
+
 <Rodal  customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0",zIndex:'6000'}} visible={showModal2} width={1000} height={1000} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal2(false)}}>
 
 

@@ -82,6 +82,7 @@ export default function Projects({vid}) {
   const [currentitem,setcurrentitem]= useState()
   const [currentind,setcurrentind]= useState()
   const [currenttag,setcurrenttag]= useState("all")
+  const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
   const useStyles = makeStyles({
     root: {
      backgroundColor:"black",
@@ -162,6 +163,10 @@ export default function Projects({vid}) {
   };
 
   let images=[]
+  const onLoadedData = () => {
+    setIsVideoLoaded(true);
+  };
+  
   const loadContent= ()=>{
     const todoRef = firebase.database().ref();
     todoRef.on('value', (snapshot) => {
@@ -169,13 +174,14 @@ export default function Projects({vid}) {
      console.log()
       setobj2(snapshot.val().filmpages.slides)
       setlink(snapshot.val().vala.settings.film.landingvideo)
-
+      setthumblink(snapshot.val().vala.settings.film.thumb)
 
     }); }
     const [obj,setobj]= useState()
     const [imgs,setimgs]= useState([])
    const[obj2,setobj2]=useState()
    const [link,setlink] = useState()
+   const [thumblink,setthumblink] = useState()
    const [imgarr,setarr] = useState([])
   const ColorButton = withStyles((theme) => ({
     root: {
@@ -256,11 +262,16 @@ const classes = useStyles()
 
 
                  <div className="vidcon">
-                   
-      <video autoPlay muted loop id="myVideo">
+                 <img
+        src={thumblink}
+        className="video-thumb tiny"
+        alt="thumb"
+        style={{ opacity: isVideoLoaded ? 0 : 1 }}
+      />      
+      <video autoPlay muted loop id="myVideo" style={{ opacity: isVideoLoaded ? 1 : 0 }} onLoadedData={onLoadedData}>
   <source src={`${link}`} type="video/mp4"/>
 </video>
-<div className="video-overlay"></div>
+
 <div className="vidwriteup">
   <h1 className="slideup">FILMS </h1>
 <h2> BY CHAVALA YADUMA</h2> 
