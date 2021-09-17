@@ -947,7 +947,11 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: 200;
 }
+#filter p:active{
+color: #61dafb;
 
+
+}
 button,
 input,
 

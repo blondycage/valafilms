@@ -283,10 +283,10 @@ const classes = useStyles()
 
 
 <div id="filter" placeholder-text="SHORTS">
-<p onClick={()=>{setcurrenttag("all")}}>ALL</p>
-    <p onClick={()=>{setcurrenttag("short")}}>SHORTS</p>
-    <p onClick={()=>{setcurrenttag("fashion")}}>FASHION</p>
-    <p onClick={()=>{setcurrenttag("documentary")}}>DOCUMENTARIES</p>
+<p onClick={()=>{setcurrenttag("all")} } style={{color:currenttag=="all"?"#c1872b":"#eeeeee"}}>ALL</p>
+    <p onClick={()=>{setcurrenttag("short")}} style={{color:currenttag=="short"?"#c1872b":"#eeeeee"}}>SHORTS</p>
+    <p onClick={()=>{setcurrenttag("fashion")}} style={{color:currenttag=="fashion"?"#c1872b":"#eeeeee"}}>FASHION</p>
+    <p onClick={()=>{setcurrenttag("documentary")}} style={{color:currenttag=="documentary"?"#c1872b":"#eeeeee"}}>DOCUMENTARIES</p>
 </div>
          
         
