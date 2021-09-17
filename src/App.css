@@ -1507,6 +1507,9 @@ max-height: 350px;
     }
     @media only screen and (max-width: 768px) {
 
+      .teampage{
+        max-height: 200vh;
+      }
       .vidwriteup h1{
         font-size: 25px;
       }
@@ -1719,9 +1722,17 @@ max-height: 350px;
       .content{
         margin: 0 15px;
       }
+      .flexunder{
+        flex-direction: column-reverse;
+      }
+      .teampage{
+        position: absolute;
+      }
       }
       @media only screen and (max-width: 500px) {
-
+.teampage{
+  position: absolute;
+}
 
 .content{
   margin: 0 15px;

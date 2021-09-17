@@ -12,10 +12,12 @@ import firebase from './firebase'
 export default function About () {
   const [items,setitems]=React.useState()
    const [hasMore,sethasmore]= React.useState(true)
-   const [count,setcount]= React.useState(0)
+   
+   const [myarray,setmyarray]=React.useState([])
+   var count=0;
   const fetchMoreData = () => {
-    setcount(count++)
-    if (count >= 4) {
+    count++
+    if (count == myarray.length) {
       sethasmore(false );
       return;
     }
@@ -23,11 +25,20 @@ export default function About () {
     // 20 more records in .5 secs
    
   };
+  const convert=(it)=>{
+   
+const arrayResult = Object.keys(it).map(room => {
+    return {id: room, name: it[room]} 
+});
+console.log(arrayResult)
+setmyarray(arrayResult)
+  }
   const loadContent = () => {
     const todoRef = firebase.database().ref('/teammembers');
     todoRef.on('value', (snapshot) => {
       setitems(snapshot.val())
     console.log(snapshot.val())
+convert(snapshot.val())
 
     });
   }
@@ -54,7 +65,7 @@ export default function About () {
 </div>
         <div className="teammembers ">
         <InfiniteScroll
-          dataLength={4}
+          dataLength={myarray.length}
           next={fetchMoreData}
           hasMore={hasMore}
           loader={<h4>Loading...</h4>}
@@ -65,10 +76,10 @@ export default function About () {
             </p>
           }
         >
-         {!!items && Object.keys(items).reverse().map((member, index) => (
+         {!!myarray&& myarray.map((member, index) => (
             <div className="teamcontent">
-            <img src={items[member].imageUrl} alt="" width="300"  />
-            <h4>{`${items[member].name} : ${items[member].role} `}</h4>
+            <img src={member.name.imageUrl} alt="" width="300"  />
+            <h4>{`${member.name.name} : ${member.name.role} `}</h4>
            <div className="ics">
            <div className='lk'> <a href="#" className="fa fa-facebook"></a>
        <a href="#" className="fa fa-twitter"></a>
