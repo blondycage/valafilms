@@ -58,9 +58,19 @@ convert(snapshot.val())
 <div className="teamtext">
 <h1>OUR TEAM</h1>
 <br />
-      <h2>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate porro veritatis quos accusamus. Velit inventore recusandae labore aut tenetur earum corrupti praesentium, error accusamus dolores necessitatibus assumenda optio perspiciatis illo quod. Id ut excepturi blanditiis perspiciatis, similique voluptatem dolore velit aut corrupti! Recusandae nobis rerum rem voluptatibus ullam deleniti distinctio!</h2>
-<br />
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eligendi ipsa fugiat iusto consequatur ullam quidem quam nihil suscipit tempore odio cupiditate sunt est aliquid, voluptatem quae quas accusamus non vel inventore delectus aliquam? Error accusantium facere tempore commodi quasi quia tempora est magni repellendus natus excepturi nesciunt et eligendi amet consequuntur, nam eaque ducimus tenetur voluptatem. Dolore cum odio explicabo voluptates voluptate non corporis nam placeat sint cumque rem velit et, inventore, tenetur labore voluptas quae minus? Ex distinctio magnam doloremque reprehenderit, eaque minus rerum voluptatibus dolorem consequatur architecto natus soluta dolores doloribus ullam. Molestias, voluptatibus! Quis illo harum maxime dolor perferendis illum repellendus ipsam, minima repellat ad aliquam laboriosam ex distinctio laborum aperiam quia quibusdam ipsa eveniet totam vel reprehenderit error mollitia odio eius! Voluptatem, iste. Consequuntur, illum.</p>
+      
+<p>Here at Vala Films, our people are our greatest asset. Collaboration is a big
+part of our culture and we have a team of young, talented and passionate
+creatives who bring fresh perspectives and infectious energy to actualize
+impactful projects.
+Our emphasis on teamwork and embracing diversity of opinions and
+voices, encouraging independent thinking and innovation, gives us the
+platform to grow as story tellers. We align expertise and experience with
+knowledge, empower creative talent and strive to approach our work in a
+fun and stimulating manner.
+Our goal is to develop stories that push boundaries, entertain and create
+lasting social and cultural impact. We believe that together we can shape
+and define the future of media in Africa.</p>
 
 </div>
         <div className="teammembers ">

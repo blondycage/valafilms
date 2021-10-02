@@ -97,18 +97,20 @@ export default function Homepage({ vid }) {
             <div className="wrapper">
                 <h2>Who We ARE</h2>
 
-                <p class="hometext"><font color = "#c1872b">We</font> are a group of creatives, just like you.</p>
-                <p className="hometext"><font color = "#c1872b">We</font> seek to create opportunities for people like us in the movie production industry.</p>
-            </div>
+                <p className="hometext"><font color = "#c1872b">We</font> are a group of creatives just like you, seeking to create opportunities for
+people like us in the film industry.</p>
+                    </div>
           </div>
           <div className="slidecontent">
             <div className="wrapper">
                 <h2>VALAFILMS</h2>
-
-                <p className="hometext"><font color = "#c1872b">VALA</font> means <font color = "#c1872b">SUPREME</font> in Farsi, the language spoken in Iran. </p>
-                <p className="hometext"><font color = "#c1872b">SUPREME</font> means something very great,remarkable or extraordinary. </p>
-                <p class="hometext"><font color = "#c1872b">SUPREME</font> is what we aim to achieve.</p>
-            </div> 
+<p><font color = "#c1872b">VALA</font> in the Persian language Farsi, means “supreme”, and how do we
+identify with this word, you may wonder? Here at Vala films, our aim is to
+deliver the highest quality, in all we do and produce. This word not only
+defines our values as a company, but the true essence we portray in all that
+we do. Here at Vala, we go beyond the expected standard, to give our
+consumers authenticity.</p>
+                   </div> 
           </div>
           
           <div className="slidecontent">
@@ -116,28 +118,35 @@ export default function Homepage({ vid }) {
                 <h2>OUR MISSION</h2>
 
                 <p class="hometext">To connect creatives.</p>
-                <p className="hometext">To guide and enhance the quality of content by connecting creatives with the best teams.</p>
-                <p className="hometext">To create and find opportunities that empower.</p>
-                <p className="hometext">To improve the entire entertainment space together.</p>
+                <p className="hometext">Enhance the quality of content.</p>
+                <p className="hometext">Connect creators with the best suited teams.</p>
+                <p className="hometext">Create and find opportunities that empower.</p>
+                <p className="hometext">Improve the entire entertainment space.</p>
               </div></div>
           <div className="slidecontent">
             <div className="wrapper">
                 <h2>HOW YOU FIT IN</h2>
 
-                <p className="hometext">Are you a writer? An actor? A cinematographer?</p>
-                <p className="hometext">Are you involved in any aspect of filmmaking and seeking opportunities to share your gifts with the world?</p>
-                <p className="hometext">Do you have ideas that require the best teams to execute?</p>
-                <p className="hometext">Send an Email to <font color = "#c1872b">info@valafilms@gmail.com</font>  and hop on board.</p>
-            </div>
+                <p className="hometext">Are you involved in any aspect of film, and seeking opportunities to share
+your content with the world? Do you have ideas that require the best teams
+to execute?
+Simply mail us here: <font color = "#c1872b">info@valafilms@gmail.com</font>.
+We look forward to having you on our team!</p>
+                  </div>
           </div>
           <div className="slidecontent">
             <div className="wrapper">
               <h2>WHAT WE DO</h2>
 
-              <p class="hometext"><font color = "#c1872b">Valafilms</font> is a bridge for film creatives to collaborate and create together.</p>
-              <p class="hometext"><font color = "#c1872b">We</font> create platforms for different facets of the film industry (in Abuja especially)</p>
-              <p className="hometext">to meet and combine their skills and gifts to create content, while protecting your own rights and the integrity of your content.</p> 
-            </div> 
+              <p class="hometext"><font color = "#c1872b">Valafilms</font> is a bridge for creatives in the film industry to connect,
+collaborate and create. We provide a space designed to cater
+predominantly for creatives in the all over Africa. Through the platforms we
+provide, creatives are given the pedestal to hone their skills and abilities, in
+order to produce art that will spread across the globe. Through our
+platform, your rights as a content producer is protected, along with your
+ability to exercise your creative freedom, as we do not prohibit the creatives
+under us the right to express their passion in their own ways.</p>
+               </div> 
           </div>
 
         </Slider>
