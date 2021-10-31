@@ -1565,7 +1565,15 @@ max-height: 350px;
       }
       .nav-content-container>h1 {
         font-size: 40px;
-      }
+      }.nav-content-container{
+      margin-left: 20px
+    }
+    .navcontent{
+      margin-left: 25px
+    }
+    .fa{
+      width: 40px;
+    }
       .content  {
         width: 100vw;
         /* margin-top: 80px; */

@@ -82,6 +82,7 @@ export default function Projects({vid}) {
   const [currentitem,setcurrentitem]= useState()
   const [currentind,setcurrentind]= useState()
   const [currenttag,setcurrenttag]= useState("all")
+  const [embed,setembed]= useState("")
   const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
   const useStyles = makeStyles({
     root: {
@@ -253,7 +254,7 @@ const classes = useStyles()
   
    <div>{ showModal && <div className='tint' style={{backgroundColor:'black',minWidth:'100vw',minHeight:'100vh',zIndex:'400'}}></div>}
    <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
-       <YoutubeEmbed embedId="rokGy0huYEA" />      
+       <YoutubeEmbed embedId={embed} />      
                 </Rodal></div>
        
                
@@ -274,7 +275,7 @@ const classes = useStyles()
 
 <div className="vidwriteup">
   <h1 className="slideup">FILMS </h1>
-<h2> BY CHAVALA YADUMA</h2> 
+
 <br />
 <h4 className="baulf2 mdf">WATCH NOW</h4>
 </div>
@@ -287,6 +288,8 @@ const classes = useStyles()
     <p onClick={()=>{setcurrenttag("short")}} style={{color:currenttag=="short"?"#c1872b":"#eeeeee"}}>SHORTS</p>
     <p onClick={()=>{setcurrenttag("fashion")}} style={{color:currenttag=="fashion"?"#c1872b":"#eeeeee"}}>FASHION</p>
     <p onClick={()=>{setcurrenttag("documentary")}} style={{color:currenttag=="documentary"?"#c1872b":"#eeeeee"}}>DOCUMENTARIES</p>
+    <p onClick={()=>{setcurrenttag("real estate")}} style={{color:currenttag=="real estate"?"#c1872b":"#eeeeee"}}>REAL ESTATE</p>
+
 </div>
          
         
@@ -304,7 +307,8 @@ const classes = useStyles()
       <br />
       <p>{obj2[item].CAPTION}</p>
       <br />
-      <h1 className="baulf2"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
+      <h1 className="baulf2"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true);setembed(obj2[item].vidlink)}
+    }>Watch Content</h1>
       <br />
       <div className='' >
    <Slider {...settings3}>

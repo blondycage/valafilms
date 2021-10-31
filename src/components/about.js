@@ -78,7 +78,7 @@ and define the future of media in Africa.</p>
           dataLength={myarray.length}
           next={fetchMoreData}
           hasMore={hasMore}
-          loader={<h4>Loading...</h4>}
+          loader={<h4></h4>}
           height={500}
           endMessage={
             <p style={{ textAlign: "center" }}>
