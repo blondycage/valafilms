@@ -146,12 +146,11 @@ setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition
    JOIN US
 </h1>
 <div className={styleCondition3 ? "slidedown " : "slideup "} onClick={()=>{setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>
-               <div className="aflex"> <a href="#" className="fa fa-facebook"></a>
-<a href="#" className="fa fa-twitter"></a>
-<a href="#" className="fa fa-google"></a>
-<a href="#" className="fa fa-linkedin"></a>
-<a href="#" className="fa fa-youtube"></a>
-<a href="#" className="fa fa-instagram"></a></div> 
+               <div className="aflex"> 
+<a href="https://twitter.com/valafilms?s=21" className="fa fa-twitter"></a>
+
+<a href="https://youtube.com/channel/UC-N-kXie3NtFqonao9Sbe8A" className="fa fa-youtube"></a>
+<a href="https://instagram.com/vala_films?utm_medium=copy_link" className="fa fa-instagram"></a></div> 
 </div>
 
 

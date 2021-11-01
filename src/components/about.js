@@ -91,9 +91,17 @@ and define the future of media in Africa.</p>
             <img src={member.name.imageUrl} alt="" width="300"  />
             <h4>{`${member.name.name} : ${member.name.role} `}</h4>
            <div className="ics">
-           <div className='lk'> <a href="#" className="fa fa-facebook"></a>
-       <a href="#" className="fa fa-twitter"></a>
-       <a href="#" className="fa fa-google"></a></div></div>
+           <div className='lk'>
+       {!!member.name.fb && <a href={member.name.fb} className="fa fa-facebook"></a>}
+      { !!member.name.tw &&<a href={member.name.tw} className="fa fa-twitter"></a>}
+       {!!member.name.ggl &&<a href={member.name.ggl} className="fa fa-google"></a>}
+       {!!member.name.ytb &&<a href={member.name.ytb} className="fa fa-youtube"></a>}
+       {!!member.name.ig &&<a href={member.name.ig} className="fa fa-instagram"></a>}
+       {!!member.name.ln && <a href={member.name.ln} className="fa fa-linkedin"></a>}
+
+       
+       
+       </div></div>
            <br />
             </div>
           ))}
