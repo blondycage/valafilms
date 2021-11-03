@@ -1513,11 +1513,12 @@ max-height: 350px;
     .storedvideo{
       width: 80%;
       margin: auto;
+      
     }
     @media only screen and (max-width: 768px) {
       .storedvideo{
-        width: 60%;
-        margin: 0;
+        
+        
       }
       .teampage{
         max-height: 200vh;
