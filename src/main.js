@@ -129,7 +129,7 @@ const [showModal,setmodal]= useState(false)
   
 
 
-<div className="radar">
+<div className="radar" onClick={()=>{window.location.href="https://instagram.com/theradar.space"}}>
   <img src={rad} alt=""/>
 </div>
     <div className="navcontent">

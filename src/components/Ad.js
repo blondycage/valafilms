@@ -226,8 +226,8 @@ const classes = useStyles()
 </video>
 <div className="video-overlay"></div>
 <div className="vidwriteup">
-  <h1 className="slideup">DRINKOAL COMMERCIAL</h1>
-<h4 style= {{color:"#d2b584"}}> BY CHAVALA YADUMA</h4> 
+  <h1 className="slideup"> COMMERCIALS</h1>
+<h4 style= {{color:"#d2b584"}}> Drinkoal</h4> 
 <br />
 
 </div>

@@ -47,6 +47,7 @@ export default function Collab({vid}) {
   const [current,setcurrent]= useState("")
   const [currentitem,setcurrentitem]= useState()
   const [currentind,setcurrentind]= useState()
+  const [embed,setembed]= useState("")
   const useStyles = makeStyles({
     root: {
      backgroundColor:"black",
@@ -218,7 +219,7 @@ const classes = useStyles()
   
    <div>{ showModal && <div className='tint' style={{backgroundColor:'black',minWidth:'100vw',minHeight:'100vh',zIndex:'400'}}></div>}
    <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
-       <YoutubeEmbed embedId="rokGy0huYEA" />      
+       <YoutubeEmbed embedId={embed} />      
                 </Rodal></div>
        
                
@@ -242,7 +243,7 @@ const classes = useStyles()
   <h1 className="slideup">COLLABORATIONS  </h1>
 <h4 style= {{color:"#d2b584"}}>A list of projects we were a part of </h4> 
 <br />
-<h1 className="baulf2 big">Watch NOW</h1>
+<h1 className="baulf2 big"onClick={()=>{window.location.href="https://www.youtube.com/watch?v=YkOLO1wXi-w"}} >Watch NOW</h1>
 </div>
 
 </div>
@@ -255,7 +256,7 @@ const classes = useStyles()
 <div className="content"> 
 <h2>{obj2[item].TITLE}</h2>
 <p>{obj2[item].CAPTION}</p>
-<h1 className="baulf2" style={{width:'fit-content'}}  onClick={()=>{setmodal(true)}}>Watch Trailer</h1>
+<h1 className="baulf2" style={{width:'fit-content'}}  onClick={()=>{setmodal(true);setembed(obj2[item].vidlink)}}>Watch Trailer</h1>
 <br/>
 <div className='' >
    <Slider {...settings3}>
