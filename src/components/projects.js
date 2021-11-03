@@ -83,6 +83,7 @@ export default function Projects({vid}) {
   const [currentind,setcurrentind]= useState()
   const [currenttag,setcurrenttag]= useState("all")
   const [embed,setembed]= useState("")
+  const [embed2,setembed2]= useState("")
   const [isVideoLoaded, setIsVideoLoaded] = React.useState(false);
   const useStyles = makeStyles({
     root: {
@@ -254,7 +255,12 @@ const classes = useStyles()
   
    <div>{ showModal && <div className='tint' style={{backgroundColor:'black',minWidth:'100vw',minHeight:'100vh',zIndex:'400'}}></div>}
    <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
-       <YoutubeEmbed embedId={embed} />      
+       {(embed!=""||!!embed)?<YoutubeEmbed embedId={embed} /> :<div >
+         <video className="storedvideo" muted autoPlay controls={true} >
+         <source src={`${embed2}`} type="video/mp4"/>
+           
+           </video>
+       </div> }    
                 </Rodal></div>
        
                
@@ -307,7 +313,12 @@ const classes = useStyles()
       <br />
       <p>{obj2[item].CAPTION}</p>
       <br />
-      <h1 className="baulf2"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true);setembed(obj2[item].vidlink)}
+      <h1 className="baulf2"  style={{width:'fit-content'}}  onClick={()=>{setmodal(true);setembed(obj2[item].vidlink)
+    if(!!obj2[item].storedvidlink) {
+      setembed2(obj2[item].storedvidlink)
+    } 
+    
+    }
     }>Watch Content</h1>
       <br />
       <div className='' >
