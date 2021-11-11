@@ -44,7 +44,7 @@ import YoutubeEmbed from "./embed";
 
 import NavigateNextTwoToneIcon from '@material-ui/icons/NavigateNextTwoTone';
 import NavigateBeforeTwoToneIcon from '@material-ui/icons/NavigateBeforeTwoTone';
-
+import ReactPlayer from 'react-player/lazy'
 
 
 function SampleNextArrow(props) {
@@ -256,10 +256,9 @@ const classes = useStyles()
    <div>{ showModal && <div className='tint' style={{backgroundColor:'black',minWidth:'100vw',minHeight:'100vh',zIndex:'400'}}></div>}
    <Rodal customMaskStyles={{backgroundColor:'black'}} customStyles={{backgroundColor:"black",padding:"0"}} visible={showModal} width={800} height={400} enterAnimation="rotate" showMask={true} onClose={()=>{setmodal(false)}}>
        {(embed!=""||!!embed)?<YoutubeEmbed embedId={embed} /> :<div >
-         <video className="storedvideo" muted autoPlay controls={true} >
-         <source src={`${embed2}`} type="video/mp4"/>
-           
-           </video>
+       
+         <ReactPlayer url={`${embed2}`}  controls={true} volume={1} playing={true} muted={true}/> 
+          
        </div> }    
                 </Rodal></div>
        

@@ -24,6 +24,7 @@
     "react-infinite-scroll-component": "^6.1.0",
     "react-lazy-load-image-component": "^1.5.1",
     "react-lazy-media": "^0.3.1",
+    "react-player": "^2.9.0",
     "react-responsive-carousel": "^3.2.16",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
