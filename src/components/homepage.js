@@ -14,9 +14,10 @@ export default function Homepage({ vid }) {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 5000,
+    speed: 500,
     arrows: false,
     pauseOnHover: true,
+    swipeToSlide:true
 
 
 
