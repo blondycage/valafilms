@@ -90,36 +90,40 @@ const [showModal,setmodal]= useState(false)
         <img src={logo} alt=""/>
         <h1 className="valatext">V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
-       <Rodal className="element" customMaskStyles={{backgroundColor:'#010101'}} customStyles={{backgroundColor:"#010101",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
-       <form  onSubmit={sendEmail}>
-  <input type="text" placeholder="NAME" name="name" required />
-  <input type="text" placeholder="EMAIL ADDRESS" name="email" required   />
-  <input type="text" placeholder="PHONE" name="phone" required />
-  {/* <textarea required  placeholder="YOUR FIELD(S) OF SPECIALIZATION&#13;&#10;(Directing, Acting, Voice Acting, Cinematography, Color Grading, Sound Design, Music Production/Scoring, Screenwriting, Drone piloting, Video Editing, Art Directing, Project Management, Graphics, Photography, Animating, Set Design, Etc.)" name="field"></textarea> */}
-  <select required placeholder="YOUR FIELD(S) OF SPECIALIZATION" name="field">
-    <option>Directing</option>
-    <option>Acting</option>
-    <option>Voice Acting</option>
-    <option>Cinematography</option>
-    <option>Color Grading</option>
-    <option>Sound Design</option>
-    <option>Music Production/Scoring</option>
-    <option>Screenwriting</option>
-    <option>Drone piloting</option>
-    <option>Art Directing</option>
-    <option>Project Management</option>
-    <option>Graphics</option>
-    <option>Photography</option>
-    <option>Animating</option>
-    <option>Set Design</option>
-    <option>Other</option>
-  </select>
-  <input type="text" placeholder="SPECIFY FIELD (OTHER)" name="fieldother"/>
-  <input  type="text" placeholder="LINK TO PREVIOUS WORK" name="pw"/>
-  <input required  type="text" placeholder="HOW DID YOU HEAR ABOUT US?" name="us" />
-  <textarea placeholder="YOUR MESSAGE" name="message"></textarea>
-  <input type="submit"   value="SEND" />
-</form>
+          <Rodal className="element" customMaskStyles={{backgroundColor:'#010101'}} customStyles={{backgroundColor:"#010101",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
+          <form  onSubmit={sendEmail}>
+  
+            <input type="text" id="n4m3" name="n4me" required />
+            <label for="n4m3" placeholder="N4M3" class="floating-label">N4M3</label>
+
+            <input type="text" placeholder="NAME" name="name" required />
+            <input type="text" placeholder="EMAIL ADDRESS" name="email" required   />
+            <input type="text" placeholder="PHONE" name="phone" required />
+            <select required name="field">
+              <option selected disabled>YOUR FIELD(S) OF SPECIALIZATION</option>
+              <option value="Directing">Directing</option>
+              <option value="Acting">Acting</option>
+              <option value="Voice Acting">Voice Acting</option>
+              <option value="Cinematography">Cinematography</option>
+              <option value="Color Grading">Color Grading</option>
+              <option value="Sound Design">Sound Design</option>
+              <option value="Music Production/Scoring">Music Production/Scoring</option>
+              <option value="Screenwriting">Screenwriting</option>
+              <option value="Drone piloting">Drone piloting</option>
+              <option value="Art Directing">Art Directing</option>
+              <option value="Project Management">Project Management</option>
+              <option value="Graphics">Graphics</option>
+              <option value="Photography">Photography</option>
+              <option value="Animating">Animating</option>
+              <option value="Set Design">Set Design</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="text" placeholder="SPECIFY FIELD (OTHER)" name="fieldother"/>
+            <input  type="text" placeholder="LINK TO PREVIOUS WORK" name="pw"/>
+            <input required  type="text" placeholder="HOW DID YOU HEAR ABOUT US?" name="us" />
+            <textarea placeholder="YOUR MESSAGE" name="message"></textarea>
+            <input type="submit"   value="SEND" />
+          </form>
                 </Rodal>
                 </div>
       </div>

@@ -976,7 +976,7 @@ textarea {
   resize: none;
 }
 
-[placeholder]::-webkit-input-placeholder { color: #eeeeee; opacity: 0.7; text-transform: uppercase;}
+/* [placeholder]::-webkit-input-placeholder { color: #eeeeee; opacity: 0.7; text-transform: uppercase;}
 [placeholder]:hover::-webkit-input-placeholder { color: #eeeeee; opacity: 0.7; }
 [placeholder]:focus::-webkit-input-placeholder { color: transparent; }
 
@@ -986,11 +986,35 @@ textarea {
 
 [placeholder]:-ms-input-placeholder { color: #eeeeee;  opacity: 0.7; text-transform: uppercase;}
 [placeholder]:hover:-ms-input-placeholder { color: #eeeeee; opacity: 0.7; }
-[placeholder]:focus:-ms-input-placeholder { color: transparent; }
+[placeholder]:focus:-ms-input-placeholder { color: transparent; } */
 
 form {
   width: 400px;
   margin: 30px auto;
+}
+
+.floating-label {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  bottom: 1.9rem;
+  color: #5d5d5d;
+  transition: 0.2s ease-in-out transform;
+  font-size: 12px;
+}
+
+.form-control:placeholder-shown + .floating-label {
+  visibility: hidden;
+  z-index: -1;
+  transition: 0.2s ease-in-out;
+}
+.form-control:not(:placeholder-shown) + .floating-label,
+.form-control:focus:not(:placeholder-shown) + .floating-label {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+  transform: translateY(-10px);
+  transition: 0.2s ease-in-out transform;
 }
 
 input[type="text"] {
