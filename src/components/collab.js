@@ -241,9 +241,8 @@ const classes = useStyles()
 
 <div className="vidwriteup">
   <h1 className="slideup">COLLABORATIONS  </h1>
-<h4 style= {{color:"#d2b584"}}>A list of projects we were a part of </h4> 
-<br />
-<h1 className="baulf2 big"onClick={()=>{window.location.href="https://www.youtube.com/watch?v=YkOLO1wXi-w"}} >Watch NOW</h1>
+// 
+<h4 className="baulf2 mdf" onClick={()=>{window.location.href="https://www.youtube.com/watch?v=YkOLO1wXi-w"}} >WATCH NOW</h4>
 </div>
 
 </div>
@@ -255,7 +254,9 @@ const classes = useStyles()
       <div className="flexunder">
 <div className="content"> 
 <h2>{obj2[item].TITLE}</h2>
+<br />
 <p>{obj2[item].CAPTION}</p>
+<br />
 <h1 className="baulf2" style={{width:'fit-content'}}  onClick={()=>{setmodal(true);setembed(obj2[item].vidlink)}}>Watch Trailer</h1>
 <br/>
 <div className='' >

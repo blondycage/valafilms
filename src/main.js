@@ -72,9 +72,10 @@ function sendEmail(e) {
         Array.from(document.querySelectorAll("input")).forEach(
           input => (input.value = "")
         );
-        Array.from(document.querySelectorAll("textarea")).forEach(
-          input => (input.value = "")
-        );
+        // Bobs: I'm stumped here
+        // Array.from(document.querySelectorAll("select").selected).forEach(
+        //   input => (option.value = "")
+        // );
         setmodal(false)
     }, (error) => {
         console.log(error.text);
