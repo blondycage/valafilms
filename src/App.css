@@ -1054,6 +1054,24 @@ textarea:hover {
   border: 2px solid rgba(230,230,230,0.2)
 }
 
+select {
+  display: block;
+  width: 400px;
+  margin: 0 0 20px;
+  padding: 8px 12px 10px 12px;
+  background: rgba(0,0,0,.25);
+  color: #eee;
+  font-family: 'BauLF-Medium';
+  font-weight: 500;
+  font-size: 8px;
+  height: 40px;
+  border: 2px solid rgba(230,230,230,0.1);
+}
+
+select:hover {
+  border: 2px solid rgba(230,230,230,0.2)
+}
+
 .select-dropdown {
   position: relative;
   display: inline-block;
