@@ -92,10 +92,6 @@ const [showModal,setmodal]= useState(false)
         <div style={{zIndex:"6000",color:"white"}}>
           <Rodal className="element" customMaskStyles={{backgroundColor:'#010101'}} customStyles={{backgroundColor:"#010101",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
           <form  onSubmit={sendEmail}>
-  
-            <input type="text" id="n4m3" name="n4m3" required />
-            <label for="n4m3" placeholder="N4M3" class="floating-label">N4M3</label>
-
             <input type="text" placeholder="NAME" name="name" required />
             <input type="text" placeholder="EMAIL ADDRESS" name="email" required   />
             <input type="text" placeholder="PHONE" name="phone" required />
