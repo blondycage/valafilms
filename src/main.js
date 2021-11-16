@@ -156,16 +156,16 @@ const [showModal,setmodal]= useState(false)
 
 <div className="nav-content-container">
 
-<h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('home');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}} >home </h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>films</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('collab');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>collaborations</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('adverts');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>commercials</h1>
-<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('team');setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>team</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('home');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}} >home </h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('projects');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}}>films</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"}onClick={()=>{setview('collab');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}}>collaborations</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('adverts');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}}>commercials</h1>
+<h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setview('team');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}}>team</h1>
 <h1 className={styleCondition3 ? "slidedown" : "slideup"} onClick={()=>{setmodal(true);
 setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}} style={{cursor:"pointer"}}> 
    JOIN US
 </h1>
-<div className={styleCondition3 ? "slidedown " : "slideup "} onClick={()=>{setstyle2(!styleCondition2);setstyle(!styleCondition);;setstyle3(!styleCondition3)}}>
+<div className={styleCondition3 ? "slidedown " : "slideup "} onClick={()=>{setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}}>
                <div className="aflex"> 
 <a href="https://twitter.com/valafilms?s=21" className="fa fa-twitter"></a>
 
