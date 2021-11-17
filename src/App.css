@@ -1002,17 +1002,16 @@ textarea {
   font-family: 'BauLF-Medium';
   font-weight: 500;
   font-size: 8px;
-  /* margin: 0 0 20px; */
+  margin: 8px 12px 10px 12px;
   pointer-events: none;
   position: absolute;
   transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
-  top: 25px;
 }
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-27px) scale(0.95);
+  transform: translateY(-13px) translateX(-8px) scale(0.95);
 }
 
 .input:hover ~ .placeholder{
