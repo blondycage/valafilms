@@ -988,6 +988,33 @@ textarea {
 [placeholder]:hover:-ms-input-placeholder { color: #eeeeee; opacity: 0.7; }
 [placeholder]:focus:-ms-input-placeholder { color: #eeeeee; opacity: 1.0; text-transform: uppercase; transform: translateY(-10px); transition: 0.2s ease-in-out transform;}
 
+.placeholder {
+  color: #eee;
+  font-family: 'BauLF-Medium';
+  font-weight: 500;
+  font-size: 8px;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
 form {
   width: 400px;
   margin: 30px auto;
