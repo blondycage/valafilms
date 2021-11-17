@@ -993,7 +993,7 @@ textarea {
   position: relative;
   width: 400px;
   bottom: 20px;
-  /* padding: 8px 12px 10px 12px; */
+  padding: 8px 12px 10px 12px;
 }
 
 .placeholder {
@@ -1012,7 +1012,7 @@ textarea {
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-25px) translateX(-10px);
+  transform: translateY(-25px) translateX(-14px);
 }
 
 .input:hover ~ .placeholder{

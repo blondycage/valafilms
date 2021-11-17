@@ -89,7 +89,7 @@ const [showModal,setmodal]= useState(false)
     <div className={`navcontainer ${visible}`}></div>
       <div className="homecon">
 
-        <img src={logo} alt="" onClick={()=>{setview('home');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}} />
+        <img src={logo} style={{zIndex:"6000"}} alt="" onClick={()=>{setview('home');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}} />
         <h1 className="valatext" onClick={()=>{setview('home');setstyle2(!styleCondition2);setstyle(!styleCondition);setmodal(false);setstyle3(!styleCondition3)}} >V A L A F I L M S</h1>
         <div style={{zIndex:"6000",color:"white"}}>
           <Rodal className="element" customMaskStyles={{backgroundColor:'#010101'}} customStyles={{backgroundColor:"#010101",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" closeButton="false" onClose={()=>{setmodal(false)}}>
