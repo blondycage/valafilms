@@ -93,36 +93,66 @@ const [showModal,setmodal]= useState(false)
         <div style={{zIndex:"6000",color:"white"}}>
           <Rodal className="element" customMaskStyles={{backgroundColor:'#010101'}} customStyles={{backgroundColor:"#010101",padding:"10px",width:"80vw",height:"auto",overflowY: 'auto'}} visible={showModal}  enterAnimation="rotate" onClose={()=>{setmodal(false)}}>
           <form  onSubmit={sendEmail}>
-          <div class="input-container">
-          <input id="firstname" class="input" type="text" placeholder=" " />
-          <label for="firstname" class="placeholder">First Name</label>
-          </div>
-            <input type="text" placeholder="NAME" name="name" required />
+            <div class="input-container">
+              <input id="name" class="input" type="text" name="name" required placeholder=" " />
+              <label for="name" class="placeholder">NAME</label>
+            </div>
+            <div class="input-container">
+              <input id="email" class="input" type="text" name="email" required placeholder=" " />
+              <label for="email" class="placeholder">EMAIL ADDRESS</label>
+            </div>
+            <div class="input-container">
+              <input id="phone" class="input" type="text" name="phone" required placeholder=" " />
+              <label for="phone" class="placeholder">PHONE</label>
+            </div>
+            
+            {/* <input type="text" placeholder="NAME" name="name" required />
             <input type="text" placeholder="EMAIL ADDRESS" name="email" required   />
-            <input type="text" placeholder="PHONE" name="phone" required />
-            <select required name="field">
-              <option selected disabled>YOUR FIELD(S) OF SPECIALIZATION</option>
-              <option value="Directing">Directing</option>
-              <option value="Acting">Acting</option>
-              <option value="Voice Acting">Voice Acting</option>
-              <option value="Cinematography">Cinematography</option>
-              <option value="Color Grading">Color Grading</option>
-              <option value="Sound Design">Sound Design</option>
-              <option value="Music Production/Scoring">Music Production/Scoring</option>
-              <option value="Screenwriting">Screenwriting</option>
-              <option value="Drone piloting">Drone piloting</option>
-              <option value="Art Directing">Art Directing</option>
-              <option value="Project Management">Project Management</option>
-              <option value="Graphics">Graphics</option>
-              <option value="Photography">Photography</option>
-              <option value="Animating">Animating</option>
-              <option value="Set Design">Set Design</option>
-              <option value="Other">Other</option>
-            </select>
-            <input type="text" placeholder="SPECIFY FIELD (OTHER)" name="fieldother"/>
+            <input type="text" placeholder="PHONE" name="phone" required /> */}
+            <div class="input-container">
+              <select required name="field">
+                <option selected disabled>YOUR FIELD(S) OF SPECIALIZATION</option>
+                <option value="Directing">Directing</option>
+                <option value="Acting">Acting</option>
+                <option value="Voice Acting">Voice Acting</option>
+                <option value="Cinematography">Cinematography</option>
+                <option value="Color Grading">Color Grading</option>
+                <option value="Sound Design">Sound Design</option>
+                <option value="Music Production/Scoring">Music Production/Scoring</option>
+                <option value="Screenwriting">Screenwriting</option>
+                <option value="Drone piloting">Drone piloting</option>
+                <option value="Art Directing">Art Directing</option>
+                <option value="Project Management">Project Management</option>
+                <option value="Graphics">Graphics</option>
+                <option value="Photography">Photography</option>
+                <option value="Animating">Animating</option>
+                <option value="Set Design">Set Design</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="input-container">
+              <input id="fieldother" class="input" type="text" name="fieldother" placeholder=" " />
+              <label for="fieldother" class="placeholder">SPECIFY FIELD (OTHER)</label>
+            </div>
+            <div class="input-container">
+              <input id="pw" class="input" type="text" name="pw" required placeholder=" " />
+              <label for="pw" class="placeholder">LINK TO PREVIOUS WORK</label>
+            </div>
+            <div class="input-container">
+              <input id="us" class="input" type="text" name="us" required placeholder=" " />
+              <label for="us" class="placeholder">HOW DID YOU HEAR ABOUT US?</label>
+            </div>
+            <div class="input-container">
+              <textarea id="message" class="input" name="message" required placeholder=" "></textarea>
+              <label for="message" class="placeholder">YOUR MESSAGE</label>
+            </div>
+            
+            {/* <input type="text" placeholder="SPECIFY FIELD (OTHER)" name="fieldother"/>
             <input  type="text" placeholder="LINK TO PREVIOUS WORK" name="pw"/>
             <input required  type="text" placeholder="HOW DID YOU HEAR ABOUT US?" name="us" />
-            <textarea placeholder="YOUR MESSAGE" name="message"></textarea>
+            <textarea placeholder="YOUR MESSAGE" name="message"></textarea> */}
+
             <input type="submit"   value="SEND" />
           </form>
                 </Rodal>
