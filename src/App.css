@@ -1012,7 +1012,7 @@ textarea {
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-31px) scale(0.95);
+  transform: translateY(-27px) scale(0.95);
 }
 
 .input:hover ~ .placeholder{
