@@ -988,6 +988,12 @@ textarea {
 [placeholder]:hover:-ms-input-placeholder { color: #eeeeee; opacity: 0.7; }
 [placeholder]:focus:-ms-input-placeholder { color: #eeeeee; opacity: 1.0; text-transform: uppercase; transform: translateY(-10px); transition: 0.2s ease-in-out transform;}
 
+.input-container {
+  height: 40px;
+  position: relative;
+  width: 60%;
+}
+
 .placeholder {
   color: #eee;
   font-family: 'BauLF-Medium';
@@ -1016,7 +1022,7 @@ textarea {
 }
 
 form {
-  width: 400px;
+  /* width: 400px; */
   margin: 30px auto;
 }
 
