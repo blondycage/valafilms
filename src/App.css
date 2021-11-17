@@ -992,8 +992,7 @@ textarea {
   height: 40px;
   position: relative;
   width: 400px;
-  margin: 0 0 20px;
-  padding: 8px 12px 10px 12px;
+  /* padding: 8px 12px 10px 12px; */
 }
 
 .placeholder {
@@ -1002,18 +1001,17 @@ textarea {
   font-family: 'BauLF-Medium';
   font-weight: 500;
   font-size: 8px;
-  /* margin: 0 0 20px;
-  padding: 8px 12px 10px 12px; */
+  margin: 0 0 20px;
   pointer-events: none;
   position: absolute;
   transform-origin: 0 50%;
   transition: transform 200ms, color 200ms;
-  top: 20px;
+  top: 5px;
 }
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-35px) scale(0.95);
+  transform: translateY(-31px) scale(0.95);
 }
 
 .input:hover ~ .placeholder{
