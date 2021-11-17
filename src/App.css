@@ -992,8 +992,14 @@ textarea {
   height: 40px;
   position: relative;
   width: 400px;
-  bottom: 20px;
-  padding: 8px 12px 10px 12px;
+  margin-bottom: 20px;
+}
+
+.textarea-container {
+  height: 150px;
+  position: relative;
+  width: 400px;
+  margin-bottom: 20px;
 }
 
 .placeholder {
